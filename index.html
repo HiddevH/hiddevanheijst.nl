@@ -41,8 +41,10 @@
         }
         h2 {
             color: #0056b3;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 5px;
+            border-bottom: 3px solid #0056b3;
+            padding-bottom: 8px;
+            font-size: 1.8em; /* Slightly larger */
+            margin-top: 25px; /* More spacing */
         }
         ul {
             list-style-type: disc;
@@ -63,6 +65,31 @@
         }
         a:hover {
             text-decoration: underline;
+        }
+        .company-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+        .company-header img {
+            width: 50px; /* Set all logos to the same size */
+            height: auto;
+            object-fit: contain; /* Prevent stretching */
+        }
+        .company-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px; /* Reduced spacing */
+        }
+        .date {
+            font-style: italic;
+            color: #666;
         }
     </style>
 </head>
@@ -97,93 +124,126 @@
         <div class="section skills">
             <h2>Key Skills</h2>
             <ul>
-                <li>Cloud-Native Architecture</li>
-                <li>Event-Driven System Design</li>
+                <li>Cloud-Native & Event-Driven Architecture</li>
                 <li>Real-Time Data Processing</li>
+                <li>Technical Leadership & Team Mentorship</li>
+                <li>Strategic Planning & Stakeholder Management</li>
+                <li>Data Governance & Compliance (Wwft, KOA)</li>
             </ul>
         </div>
 
         <div class="section experience">
             <h2>Professional Experience</h2>
 
-            <h3>Cloud Data Architect</h3>
-            <p><strong>Nederlandse Loterij</strong> | September 2024 - Present</p>
+            <!-- Nederlandse Loterij Section -->
+            <div class="company-header">
+                <img src="images/nederlandse_loterij_logo.png" alt="Nederlandse Loterij Logo">
+                <span class="company-name">Nederlandse Loterij</span>
+            </div>
             <p>Rijswijk, South Holland, Netherlands</p>
+
+            <div class="job-title">Cloud Data Architect</div>
+            <p><span class="date">September 2024 – Present</span></p>
             <ul>
-                <li>Design and implement scalable, cloud-based solutions enabling real-time analytics.</li>
-                <li>Lead strategic initiatives to drive innovation with modern data architectures.</li>
-                <li>Align technology strategies with business objectives, ensuring seamless integration and operational excellence.</li>
+                <li><strong>Designed & Implemented Real-Time Data Platform:</strong> Built a scalable, event-driven architecture using Azure Functions, Event Hubs, and CosmosDB, supporting real-time analytics.</li>
+                <li><strong>Event-Driven Personalization:</strong> Established event-driven integration for personalization, enabling omnichannel communication with players.</li>
+                <li><strong>Strategic AI & Data Governance:</strong> Authored a strategy document on AI and data, focusing on self-service analytics and governance.</li>
             </ul>
 
-            <h3>Tech Lead Data Engineering</h3>
-            <p><strong>Nederlandse Loterij</strong> | August 2023 - September 2024</p>
-            <p>Rijswijk, South Holland, Netherlands</p>
+            <div class="job-title">Lead Data Engineer & Platform Architect</div>
+            <p><span class="date">September 2020 – September 2024</span></p>
             <ul>
-                <li>Specialized in designing and implementing scalable, real-time data solutions utilizing Azure Functions, CosmosDB and Event Hubs.</li>
-                <li>Focused on cloud architecture and event-driven systems.</li>
-                <li>Empowered and coached teams to deliver impactful data capabilities, fostering a culture of continuous improvement.</li>
+                <li><strong>Fraud & Responsible Gaming Analytics:</strong> Developed real-time detection models for fraud, gambling addiction, and money laundering using Azure Data Explorer.</li>
+                <li><strong>Scalability Optimization:</strong> Engineered solutions to process tens of thousands of transactions per minute, reducing microtransaction load by 95% through one-minute aggregations.</li>
+                <li><strong>Leadership & Mentorship:</strong> Led a team of data engineers, defining best practices for event sourcing, streaming data processing, and real-time data modeling.</li>
+                <li><strong>System & Regulatory Compliance:</strong> Ensured compliance with the Anti-Money Laundering Act (Wwft) and the Remote Gambling Act (KOA), supporting regulatory audits and risk assessments.</li>
+                <li><strong>Performance & Latency Management:</strong> Maintained sub-second processing times for sportsbook and casino transactions, ensuring seamless real-time player monitoring.</li>
+                <li><strong>Strategic Data Initiatives:</strong> Advocated for self-service analytics and data democratization across departments.</li>
             </ul>
 
-            <h3>Data Engineer & Platform Architect</h3>
-            <p><strong>Nederlandse Loterij</strong> | September 2020 - August 2023</p>
-            <ul>
-                <li>Architected and developed a serverless and scalable data platform on Microsoft Azure to enable real-time identification of fraud and gaming addictions.</li>
-            </ul>
+            <!-- Hallmark Benelux Section -->
+            <div class="company-header">
+                <img src="images/hallmark_logo.jpeg" alt="Hallmark Benelux Logo">
+                <span class="company-name">Hallmark Benelux</span>
+            </div>
+            <p>Capelle a/d IJssel, South Holland, Netherlands</p>
 
-            <h3>Data Engineer</h3>
-            <p><strong>Hallmark Benelux</strong> | October 2018 - August 2020</p>
+            <div class="job-title">Data Engineer</div>
+            <p><span class="date">October 2018 - August 2020</span></p>
             <ul>
-                <li>Built a data platform on Microsoft Azure for Data Science and BI reporting, utilizing services such as Databricks, Azure Data Factory, Azure SQL Database, and Power BI.</li>
-                <li>Developed a recommendation engine using Python to optimize inventory for seasonal sales, such as Christmas cards, across retail stores.</li>
+                <li><strong>Cloud Migration & Data Platform:</strong> Built a cloud-based data platform using Microsoft Azure for Data Science and BI reporting.</li>
+                <li><strong>Inventory Optimization:</strong> Developed a recommendation engine using Python to optimize inventory for seasonal sales across retail stores.</li>
             </ul>
+            <!-- Capgemini Section -->
+            <div class="company-header">
+                <img src="images/capgemini_logo.png" alt="Capgemini Logo">
+                <span class="company-name">Capgemini</span>
+            </div>
+            <p>Utrecht, Netherlands</p>
 
-            <h3>Consultant and Data Engineer</h3>
-            <p><strong>Capgemini</strong> | April 2017 - October 2018</p>
+            <div class="job-title">Consultant and Data Engineer</div>
+            <p><span class="date">April 2017 - October 2018</span></p>
             <ul>
                 <li><strong>Capgemini Projects:</strong></li>
                 <ul>
-                    <li>Developed expertise in Salesforce CDP as a strategic partner, creating a Center of Expertise on Customer Data Platforms.</li>
-                    <li>Worked on data engineering solutions using Python and SQL, focusing on web analytics and data platform optimization.</li>
+                    <li><strong>Salesforce CDP Expertise:</strong> Developed expertise in Salesforce CDP as a strategic partner, creating a Center of Expertise on Customer Data Platforms.</li>
+                    <li><strong>Data Engineering Solutions:</strong> Built data engineering pipelines using Python and SQL, optimizing web analytics and data platforms.</li>
                 </ul>
-                <li><strong>Client: ABN AMRO Bank N.V.:</strong></li>
+
+                <li><strong>Client: ABN AMRO Bank N.V.</strong></li>
+                <ul>
+                    <li><strong>Customer & Financial Data Analytics:</strong> Conducted data-driven insights on customer interaction and financial transactions for conversational and offline/online touchpoints using Python.</li>
+                    <li><strong>Enhancing Customer Experience:</strong> Assisted in data-driven decision-making to improve digital banking experiences.</li>
+                </ul>
+            </ul>
+
+            <h2>Other Experience</h2>
+            <!-- Helloprint Section -->
+            <div class="company-header">
+                <img src="images/helloprint_logo.png" alt="Helloprint Logo">
+                <span class="company-name">Helloprint</span>
+            </div>
+            <p>Rotterdam, Netherlands</p>
+            <div class="job-title">Management Trainee / Team Lead New Countries</div>
+            <p><span class="date">October 2016 - March 2017</span></p>
             <ul>
-                <li>Ran customer interaction and financial data analytics for conversational and offline/online customer
-                    touch-points using Python.
-                </li>
-                <li>Assist in data-driven decision-making to enhance online customer experience.</li>
+                <li><strong>Market Expansion:</strong> Led a team responsible for rapid growth in new countries, launching operations in multiple markets.</li>
+                <li><strong>Product Ownership:</strong> Acted as product owner, coordinating between teams to ensure timely delivery and market fit.</li>
             </ul>
-            </ul>
-
-            <h3>Management Trainee / Team Lead New Countries</h3>
-            <p><strong>Helloprint</strong> | October 2016 - March 2017</p>
+              <!-- Stedin Internship Section -->
+            <div class="company-header">
+                <img src="images/stedin_logo.jpg" alt="Stedin Logo">
+                <span class="company-name">Stedin</span>
+            </div>
+            <p>Rotterdam, Netherlands</p>
+            <div class="job-title">Intern - Smart Grids & EV Charging Research</div>
+            <p><span class="date">January 2016 - August 2016</span></p>
             <ul>
-                <li>Product owner for a team responsible for rapid growth in new countries.</li>
+                <li><strong>EV Charging Optimization:</strong> Conducted research on demand management for electric vehicle charging, providing insights to reduce stress on the electrical grid.</li>
             </ul>
 
-            <h3>Graduate Intern</h3>
-            <p><strong>Stedin</strong> | January 2016 - August 2016</p>
-            <ul>
-                <li>Researched demand-side management for electric vehicle charging to reduce power grid strain.</li>
-                <li>Ran a pilot study on valet charging and published findings with an 8.5 thesis grade.</li>
-            </ul>
+    <!-- G.S.R. 'Aegir' Section -->
+    <div class="company-header">
+        <img src="images/ster.png" alt="G.S.R. 'Aegir' Logo">
+        <span class="company-name">G.S.R. 'Aegir'</span>
+    </div>
+    <p>Groningen, Netherlands</p>
+    <div class="job-title">Rower & Rowing Coach</div>
+    <p><span class="date">September 2010 - July 2015</span></p>
+    <ul>
+        <li><strong>Coaching & Athlete Development:</strong> Trained top-class women’s rowing teams, providing physical, emotional, and nutritional guidance to optimize performance.</li>
+        <li><strong>Competitive Rowing:</strong> Competed in elite rowing competitions, training 8-9 times per week at a high-performance level.</li>
+        <li><strong>Community Engagement:</strong> Participated in club committees, leading initiatives in recruitment, promotional campaigns, and member engagement.</li>
+    </ul>
 
-            <h3>Rower & Rowing Coach</h3>
-            <p><strong>G.S.R. 'Aegir'</strong> | September 2010 - July 2015</p>
-            <ul>
-            <li>Coached top-class women’s rowing teams, focusing on physical, emotional, and nutritional guidance.</li>
-            <li>Competed as a rower in top-class sports, training 8-9 times a week.</li>
-            <li>Participated in committees, contributing to recruitment, promotional campaigns, and member engagement.
-            </li>
-            </ul>
-        </div>
+    <!-- Education Section -->
+    <h2>Education</h2>
 
-        <div class="section education">
-            <h2>Education</h2>
-            <h3>Rotterdam School of Management, Erasmus University</h3>
-            <p>Master of Science (MSc), Business Information Management | 2015 - 2016</p>
+    <div class="job-title">Rotterdam School of Management, Erasmus University</div>
+    <p><em>Master of Science (MSc), Business Information Management | 2015 - 2016</em></p>
 
-            <h3>Rijksuniversiteit Groningen / University of Groningen</h3>
-            <p>Bachelor of Science (B.Sc.), Technology Management | 2010 - 2015</p>
+    <div class="job-title">Rijksuniversiteit Groningen / University of Groningen</div>
+    <p><em>Bachelor of Science (B.Sc.), Technology Management | 2010 - 2015</em></p>
         </div>
     </div>
 </body>
