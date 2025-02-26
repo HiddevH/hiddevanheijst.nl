@@ -5,6 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hidde van Heijst - Professional Resume</title>
     <style>
+@media print {
+    body {
+        font-size: 10px; /* Make overall text slightly smaller */
+        color: black;
+        background: white;
+    }
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 18px; /* Reduce header size */
+        margin-bottom: 5px;
+    }
+
+    h2 {
+        font-size: 14x !important; /* Reduce from 14px */
+        border-bottom: 1px solid #0056b3;
+        padding-bottom: 3px;
+        margin-top: 12px; /* Reduce spacing */
+    }
+
+    .company-header {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        margin-bottom: 2px;
+    }
+    .company-header img {
+        width: 25px !important; /* Reduce from 18px */
+        height: auto;
+        margin-right: 5px;
+    }
+    .company-name {
+        font-size: 13px !important;
+        font-weight: bold;
+        color: #333;
+    }
+    .job-title {
+        font-size: 11px !important;
+        font-weight: bold;
+        margin-top: 2px;
+        margin-bottom: 1px;
+    }
+    .date {
+        font-size: 10px !important;
+        font-style: italic;
+        color: #666;
+        display: block;
+        margin-top: -4px; /* Bring closer to job title */
+    }
+    ul {
+        margin-bottom: 2px; /* Less spacing between bullet points */
+    }
+
+    p, li {
+        line-height: 1.2; /* Slightly tighter spacing */
+    }
+    .print-button {
+        display: none; /* Hide print button */
+    }
+    .footer {
+        display: none; /* Hide footer */
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    .footer {
+        text-align: center;
+        font-size: 9px;
+        color: #666;
+    }
+}
         body {
             font-family: 'Open Sans', Arial, sans-serif;
             line-height: 1.6;
@@ -41,10 +115,10 @@
         }
         h2 {
             color: #0056b3;
-            border-bottom: 3px solid #0056b3;
-            padding-bottom: 8px;
-            font-size: 1.8em; /* Slightly larger */
-            margin-top: 25px; /* More spacing */
+            font-size: 1.5em; /* Reduce from 1.8em */
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+            margin-top: 20px; /* Reduce spacing */
         }
         ul {
             list-style-type: disc;
@@ -88,11 +162,56 @@
             margin-top: 5px; /* Reduced spacing */
         }
         .date {
+            font-size: 14px;
             font-style: italic;
             color: #666;
+            display: block;
+            margin-top: -8px;
+        }
+        .footer {
+            text-align: center; /* Centers content */
+            margin-top: 30px; /* Adds spacing above footer */
+            padding: 20px 0; /* Ensures even padding */
+            background-color: #f4f4f4; /* Light grey to distinguish it */
+        }
+
+        .print-button {
+            display: inline-block; /* Keeps it from stretching */
+            margin-top: 10px; /* Adds spacing between text and button */
         }
     </style>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'mm', 'a4'); // A4 page size
+
+    let resumeElement = document.querySelector('.container');
+
+    html2canvas(resumeElement, { scale: 2 }).then(canvas => {
+        let imgData = canvas.toDataURL('image/png');
+        let imgWidth = 210; // A4 width in mm
+        let pageHeight = 297; // A4 height in mm
+        let imgHeight = (canvas.height * imgWidth) / canvas.width;
+        let heightLeft = imgHeight;
+        let position = 0;
+
+        doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        while (heightLeft > 0) {
+            position -= pageHeight;
+            doc.addPage();
+            doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+        }
+
+        doc.save("Hidde_van_Heijst_Resume.pdf");
+    });
+}
+</script>
 <body>
     <div class="container">
         <div class="header">
@@ -150,8 +269,6 @@
                 <img src="images/nederlandse_loterij_logo.png" alt="Nederlandse Loterij Logo">
                 <span class="company-name">Nederlandse Loterij</span>
             </div>
-            <p>Rijswijk, South Holland, Netherlands</p>
-
             <div class="job-title">Cloud Data Architect</div>
             <p><span class="date">September 2024 – Present</span></p>
             <ul>
@@ -176,8 +293,6 @@
                 <img src="images/hallmark_logo.jpeg" alt="Hallmark Benelux Logo">
                 <span class="company-name">Hallmark Benelux</span>
             </div>
-            <p>Capelle a/d IJssel, South Holland, Netherlands</p>
-
             <div class="job-title">Data Engineer</div>
             <p><span class="date">October 2018 - August 2020</span></p>
             <ul>
@@ -189,8 +304,6 @@
                 <img src="images/capgemini_logo.png" alt="Capgemini Logo">
                 <span class="company-name">Capgemini</span>
             </div>
-            <p>Utrecht, Netherlands</p>
-
             <div class="job-title">Consultant and Data Engineer</div>
             <p><span class="date">April 2017 - October 2018</span></p>
             <ul>
@@ -215,7 +328,6 @@
                     <img src="images/helloprint_logo.png" alt="Helloprint Logo">
                     <span class="company-name">Helloprint</span>
                 </div>
-                <p>Rotterdam, Netherlands</p>
                 <div class="job-title">Management Trainee / Team Lead New Countries</div>
                 <p><span class="date">October 2016 - March 2017</span></p>
                 <ul>
@@ -228,7 +340,6 @@
                     <img src="images/stedin_logo.jpg" alt="Stedin Logo">
                     <span class="company-name">Stedin</span>
                 </div>
-                <p>Rotterdam, Netherlands</p>
                 <div class="job-title">Graduate Intern – Smart Grids & EV Charging Research</div>
                 <p><span class="date">February 2016 - July 2016</span></p>
                 <ul>
@@ -242,7 +353,6 @@
                     <img src="images/stork_logo.jpg" alt="Stork Logo">
                     <span class="company-name">Stork</span>
                 </div>
-                <p>Groningen, Netherlands</p>
                 <div class="job-title">Graduate Intern – Change Management</div>
                 <p><span class="date">September 2014 - January 2015</span></p>
                 <ul>
@@ -256,7 +366,6 @@
                     <img src="images/ster.png" alt="G.S.R. 'Aegir' Logo">
                     <span class="company-name">G.S.R. Aegir</span>
                 </div>
-                <p>Groningen, Netherlands</p>
                 <div class="job-title">Rower & Rowing Coach</div>
                 <p><span class="date">September 2010 - July 2015</span></p>
                 <ul>
@@ -284,6 +393,7 @@
         </ul>
         </div>
         <!-- Education Section -->
+            <div class="section certifications">
         <h2>Education</h2>
 
         <div class="job-title">Rotterdam School of Management, Erasmus University</div>
@@ -293,5 +403,11 @@
         <p><em>Bachelor of Science (B.Sc.), Technology Management | 2010 - 2015</em></p>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 Hidde van Heijst. All Rights Reserved.</p>
+
+        <!-- Print Button -->
+        <button class="print-button" onclick="window.print()">Print to PDF</button>    </div>
 </body>
 </html>
