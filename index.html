@@ -37,6 +37,7 @@
         width: 25px !important; /* Reduce from 18px */
         height: auto;
         margin-right: 5px;
+        margin-bottom: 2px; /* Ensures space between company name and job title */
     }
     .company-name {
         font-size: 13px !important;
@@ -47,7 +48,7 @@
         font-size: 11px !important;
         font-weight: bold;
         margin-top: 2px;
-        margin-bottom: 1px;
+        margin-bottom: 1px !important; /* Reduces space before bullet points */
     }
     .date {
         font-size: 10px !important;
@@ -57,7 +58,8 @@
         margin-top: -4px; /* Bring closer to job title */
     }
     ul {
-        margin-bottom: 2px; /* Less spacing between bullet points */
+        margin-left: 10px !important;
+        padding-left: 0;
     }
 
     p, li {
@@ -122,7 +124,8 @@
         }
         ul {
             list-style-type: disc;
-            margin-left: 20px;
+            margin-left: 15px !important; /* Reduce indentation from 20-30px */
+            padding-left: 0; /* Aligns bullet points better */
         }
         .contact-info p, .summary p {
             margin: 5px 0;
