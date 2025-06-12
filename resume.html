@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidde van Heijst - Professional Resume</title>
+    <style>
+        @media print {
+            body {
+                font-size: 10px;
+                /* Make overall text slightly smaller */
+                color: black;
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 18px;
+                /* Reduce header size */
+                margin-bottom: 5px;
+            }
+
+            h2 {
+                font-size: 14x !important;
+                /* Reduce from 14px */
+                border-bottom: 1px solid #0056b3;
+                padding-bottom: 3px;
+                margin-top: 12px;
+                /* Reduce spacing */
+            }
+
+            .company-header {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                margin-bottom: 2px;
+            }
+
+            .company-header img {
+                width: 25px !important;
+                /* Reduce from 18px */
+                height: auto;
+                margin-right: 5px;
+                margin-bottom: 2px;
+                /* Ensures space between company name and job title */
+            }
+
+            .company-name {
+                font-size: 13px !important;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .job-title {
+                font-size: 11px !important;
+                font-weight: bold;
+                margin-top: 2px;
+                margin-bottom: 1px !important;
+                /* Reduces space before bullet points */
+            }
+
+            .date {
+                font-size: 10px !important;
+                font-style: italic;
+                color: #666;
+                display: block;
+                margin-top: -4px;
+                /* Bring closer to job title */
+            }
+
+            ul {
+                margin-left: 10px !important;
+                padding-left: 0;
+            }
+
+            p,
+            li {
+                line-height: 1.2;
+                /* Slightly tighter spacing */
+            }
+
+            .print-button {
+                display: none;
+                /* Hide print button */
+            }
+
+            .footer {
+                display: none;
+                /* Hide footer */
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .footer {
+                text-align: center;
+                font-size: 9px;
+                color: #666;
+            }
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #0056b3;
+        }
+
+        .header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #0056b3;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 1.5em;
+            /* Reduce from 1.8em */
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            /* Reduce spacing */
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 15px !important;
+            /* Reduce indentation from 20-30px */
+            padding-left: 0;
+            /* Aligns bullet points better */
+        }
+
+        .contact-info p,
+        .summary p {
+            margin: 5px 0;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .company-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .company-header img {
+            width: 50px;
+            /* Set all logos to the same size */
+            height: auto;
+            object-fit: contain;
+            /* Prevent stretching */
+        }
+
+        .company-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+            /* Reduced spacing */
+        }
+
+        .date {
+            font-size: 14px;
+            font-style: italic;
+            color: #666;
+            display: block;
+            margin-top: -8px;
+        }
+
+        .footer {
+            text-align: center;
+            /* Centers content */
+            margin-top: 30px;
+            /* Adds spacing above footer */
+            padding: 20px 0;
+            /* Ensures even padding */
+            background-color: #f4f4f4;
+            /* Light grey to distinguish it */
+        }
+
+        .print-button {
+            display: inline-block;
+            /* Keeps it from stretching */
+            margin-top: 10px;
+            /* Adds spacing between text and button */
+        }
+    </style>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+    function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF('p', 'mm', 'a4'); // A4 page size
+
+        let resumeElement = document.querySelector('.container');
+
+        html2canvas(resumeElement, { scale: 2 }).then(canvas => {
+            let imgData = canvas.toDataURL('image/png');
+            let imgWidth = 210; // A4 width in mm
+            let pageHeight = 297; // A4 height in mm
+            let imgHeight = (canvas.height * imgWidth) / canvas.width;
+            let heightLeft = imgHeight;
+            let position = 0;
+
+            doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+
+            while (heightLeft > 0) {
+                position -= pageHeight;
+                doc.addPage();
+                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+            }
+
+            doc.save("Hidde_van_Heijst_Resume.pdf");
+        });
+    }
+</script>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>Hidde van Heijst</h1>
+                <p><strong>Cloud Data Architect | Nederlandse Loterij</strong></p>
+                <p>Hilversum, North Holland, Netherlands</p>
+            </div>
+            <img src="profielfoto.png" alt="Hidde van Heijst Profile Picture">
+        </div>
+
+        <div class="section contact-info">
+            <h2>Contact Information</h2>
+            <p>Email:
+                <script>
+                    var user = "info";
+                    var domain = "hiddevanheijst.nl";
+                    document.write('<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>');
+                </script>
+            </p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/hiddevanheijst"
+                    target="_blank">linkedin.com/in/hpfvanheijst</a></p>
+            <p>GitHub: <a href="https://github.com/HiddevH" target="_blank">github.com/HiddevH</a></p>
+        </div>
+
+        <div class="section summary">
+            <h2>Summary</h2>
+            <p>
+                Experienced Data Leader with over 7 years of expertise in building and scaling data platforms. Combining
+                a robust technical foundation in Python with strategic vision, I specialize in real-time data processing
+                and event-driven architectures.
+            </p>
+            <p>
+                Passionate about mentoring teams, defining best practices, and bridging business and technology to
+                maximize data-driven value. With experience across iGaming, retail, e-commerce, and fintech, I bring a
+                blend of technical depth, strategic thinking, and leadership to scale data platforms, streamline
+                operations, and ensure regulatory compliance.
+            </p>
+        </div>
+
+        <div class="section skills">
+            <h2>Key Skills</h2>
+            <ul>
+                <li><strong>Cloud Platforms</strong> – Azure, Azure Functions, CosmosDB, Event Hubs</li>
+                <li><strong>Real-Time Data Architecture</strong> – Event sourcing, streaming ingestion</li>
+                <li><strong>Python (7+ years)</strong> – Data pipelines, orchestration, API integration, ML
+                    experimentation</li>
+                <li><strong>PySpark & Databricks</strong> – Distributed processing, real-time compliance analytics</li>
+                <li><strong>SQL & KQL</strong> – Querying, diagnostics, and observability on large-scale systems</li>
+                <li><strong>Infrastructure as Code</strong> – Terraform for managing cloud infrastructure and CI/CD
+                    pipelines</li>
+            </ul>
+        </div>
+
+        <div class="section experience">
+            <h2>Professional Experience</h2>
+
+            <!-- Nederlandse Loterij Section -->
+            <div class="company-header">
+                <img src="images/nederlandse_loterij_logo.png" alt="Nederlandse Loterij Logo">
+                <span class="company-name">Nederlandse Loterij</span>
+            </div>
+            <div class="job-title">Cloud Data Architect</div>
+            <p><span class="date">September 2024 – Present</span></p>
+            <ul>
+                <li><strong>Designed & Implemented Real-Time Data Platform:</strong> Built a scalable, event-driven
+                    architecture using Azure Functions, Event Hubs, and CosmosDB, supporting real-time analytics.</li>
+                <li><strong>Event-Driven Personalization:</strong> Established event-driven integration for
+                    personalization, enabling omnichannel communication with players.</li>
+                <li><strong>Strategic AI & Data Governance:</strong> Authored a strategy document on AI and data,
+                    focusing on self-service analytics and governance.</li>
+            </ul>
+
+            <div class="job-title">Lead Data Engineer & Platform Architect</div>
+            <p><span class="date">September 2020 – September 2024</span></p>
+            <ul>
+                <li><strong>Engineering Leadership:</strong> Led and mentored a team of data engineers, establishing
+                    best practices for event sourcing, streaming ingestion, and real-time modeling within a
+                    Python-centric data platform.</li>
+                <li><strong>Real-Time Data Engineering:</strong> Designed and developed real-time pipelines using Azure
+                    Functions to support fraud detection, responsible gaming, and anti-money laundering (Wwft) use
+                    cases.</li>
+                <li><strong>Compliance-Driven Architectures:</strong> Built scalable, event-driven data flows using
+                    CosmosDB and Databricks (PySpark), aligned with KOA and Wwft regulatory requirements.</li>
+                <li><strong>Scalability & Throughput Optimization:</strong> Enabled the processing of tens of thousands
+                    of transactions per minute by introducing efficient aggregation techniques, significantly reducing
+                    system load.</li>
+                <li><strong>Performance & Latency Management:</strong> Maintained sub-second processing times for
+                    sportsbook and casino transactions, ensuring seamless real-time player monitoring.</li>
+                <li><strong>Data Democratization:</strong> Enabled self-service analytics through well-structured
+                    ingestion and transformation pipelines, with a focus on reliability and maintainability.</li>
+            </ul>
+
+            <!-- Hallmark Benelux Section -->
+            <div class="company-header">
+                <img src="images/hallmark_logo.jpeg" alt="Hallmark Benelux Logo">
+                <span class="company-name">Hallmark Benelux</span>
+            </div>
+            <div class="job-title">Data Engineer</div>
+            <p><span class="date">October 2018 - August 2020</span></p>
+            <ul>
+                <li><strong>Cloud Migration & Data Platform:</strong> Built a cloud-based data platform using Microsoft
+                    Azure for Data Science and BI reporting.</li>
+                <li><strong>Inventory Optimization:</strong> Developed a recommendation engine using Python to optimize
+                    inventory for seasonal sales across retail stores.</li>
+                <li><strong>Python development:</strong> Used Python extensively for recommendation engine development,
+                    data modeling, and pipeline orchestration supporting e-commerce performance insights.</li>
+            </ul>
+            <!-- Capgemini Section -->
+            <div class="company-header">
+                <img src="images/capgemini_logo.png" alt="Capgemini Logo">
+                <span class="company-name">Capgemini</span>
+            </div>
+            <div class="job-title">Consultant and Data Engineer</div>
+            <p><span class="date">April 2017 - October 2018</span></p>
+            <ul>
+                <li><strong>Capgemini Projects:</strong></li>
+                <ul>
+                    <li><strong>Salesforce CDP Expertise:</strong> Developed expertise in Salesforce CDP as a strategic
+                        partner, creating a Center of Expertise on Customer Data Platforms.</li>
+                    <li><strong>Data Engineering Solutions:</strong> Built data engineering pipelines using Python and
+                        SQL, optimizing web analytics and data platforms.</li>
+                    <li><strong>Python & SQL pipelines:</strong> Designed and implemented data workflows using Python
+                        and SQL for customer analytics, reporting automation, and web analytics optimization.</li>
+                </ul>
+
+                <li><strong>Client: ABN AMRO Bank N.V.</strong></li>
+                <ul>
+                    <li><strong>Customer & Financial Data Analytics:</strong> Conducted data-driven insights on customer
+                        interaction and financial transactions for conversational and offline/online touchpoints using
+                        Python.</li>
+                    <li><strong>Enhancing Customer Experience:</strong> Assisted in data-driven decision-making to
+                        improve digital banking experiences.</li>
+                </ul>
+            </ul>
+
+            <div class="section experience">
+                <h2>Other Experience</h2>
+
+                <!-- Helloprint Section -->
+                <div class="company-header">
+                    <img src="images/helloprint_logo.png" alt="Helloprint Logo">
+                    <span class="company-name">Helloprint</span>
+                </div>
+                <div class="job-title">Management Trainee / Team Lead New Countries</div>
+                <p><span class="date">October 2016 - March 2017</span></p>
+                <ul>
+                    <li><strong>Market Expansion:</strong> Led a team responsible for rapid growth in new countries,
+                        launching operations in multiple markets.</li>
+                    <li><strong>Product Ownership:</strong> Acted as product owner, coordinating between teams to ensure
+                        timely delivery and market fit.</li>
+                </ul>
+
+                <!-- Stedin Internship Section -->
+                <div class="company-header">
+                    <img src="images/stedin_logo.jpg" alt="Stedin Logo">
+                    <span class="company-name">Stedin</span>
+                </div>
+                <div class="job-title">Graduate Intern – Smart Grids & EV Charging Research</div>
+                <p><span class="date">February 2016 - July 2016</span></p>
+                <ul>
+                    <li><strong>EV Charging Optimization:</strong> Researched <strong>demand-side management</strong> to
+                        optimize grid efficiency for electric vehicle (EV) charging.</li>
+                    <li><strong>Algorithm Development:</strong> Designed and tested <strong>valet charging
+                            algorithms</strong> to reduce energy grid stress.</li>
+                    <li><strong>Impact & Recognition:</strong> Achieved a <strong>grade of 8.5/10</strong> and received
+                        <strong>media coverage</strong> for sustainable EV research.</li>
+                </ul>
+
+                <!-- Stork Internship Section -->
+                <div class="company-header">
+                    <img src="images/stork_logo.jpg" alt="Stork Logo">
+                    <span class="company-name">Stork</span>
+                </div>
+                <div class="job-title">Graduate Intern – Change Management</div>
+                <p><span class="date">September 2014 - January 2015</span></p>
+                <ul>
+                    <li><strong>Process Optimization:</strong> Researched employee adoption of a new hour registration
+                        system, analyzing change resistance.</li>
+                    <li><strong>Change Management Strategy:</strong> Developed actionable recommendations to ensure a
+                        smooth system rollout.</li>
+                    <li><strong>Impact Measurement:</strong> Achieved a <strong>grade of 8.5/10</strong> for research
+                        quality and effectiveness.</li>
+                </ul>
+
+                <!-- G.S.R. 'Aegir' Section -->
+                <div class="company-header">
+                    <img src="images/ster.png" alt="G.S.R. 'Aegir' Logo">
+                    <span class="company-name">G.S.R. Aegir</span>
+                </div>
+                <div class="job-title">Rower & Rowing Coach</div>
+                <p><span class="date">September 2010 - July 2015</span></p>
+                <ul>
+                    <li><strong>Coaching & Athlete Development:</strong> Trained top-class women’s rowing teams,
+                        providing physical, emotional, and nutritional guidance to optimize performance.</li>
+                    <li><strong>Competitive Rowing:</strong> Competed at the national level, training 8-9 times per
+                        week.</li>
+                    <li><strong>Community Engagement:</strong> Participated in club committees, leading initiatives in
+                        recruitment, promotional campaigns, and member engagement.</li>
+                </ul>
+            </div>
+
+            <!-- Technical & industry-recognized certificates -->
+            <div class="section certifications">
+                <h2>Certifications & Professional Development</h2>
+                <ul>
+                    <li><strong>Influential Communication</strong> (Bureau Zuidema)</li>
+                    <li><strong>Certified Kubernetes Application Developer</strong> (Linux Foundation)</li>
+                    <li><strong>Scrum PSPO I Certificate</strong> (Scrum.org)</li>
+                    <li><strong>Data Science in Python Certificate</strong> (DataCamp)</li>
+                    <li><strong>Salesforce DMP – Technical Track</strong> (Salesforce, UK)</li>
+                    <li><strong>Business Intelligence Track</strong> (Capgemini)</li>
+                    <li><strong>Empathic Listening</strong> (Capgemini)</li>
+                    <li><strong>The Pyramid Principle</strong> (Capgemini)</li>
+                    <li><strong>Teamwork Course</strong> (University of Groningen)</li>
+                    <li><strong>Effective Communication Course</strong> (University of Groningen)</li>
+                    <li><strong>Interview Course</strong> (University of Groningen)</li>
+                </ul>
+            </div>
+            <!-- Education Section -->
+            <div class="section certifications">
+                <h2>Education</h2>
+
+                <div class="job-title">Rotterdam School of Management, Erasmus University</div>
+                <p><em>Master of Science (MSc), Business Information Management | 2015 - 2016</em></p>
+
+                <div class="job-title">Rijksuniversiteit Groningen / University of Groningen</div>
+                <p><em>Bachelor of Science (B.Sc.), Technology Management | 2010 - 2015</em></p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 Hidde van Heijst. All Rights Reserved. | KvK: 97479888</p>
+
+        <!-- Print Button -->
+        <button class="print-button" onclick="window.print()">Print to PDF</button>
+    </div>
+</body>
+
+</html>
