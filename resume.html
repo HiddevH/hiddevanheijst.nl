@@ -6,118 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hidde van Heijst - Professional Resume</title>
     <style>
-        /* Print Styles - Optimized for ATS and printing */
-        @media print {
-            body {
-                font-size: 11px;
-                color: black;
-                background: white;
-                margin: 0;
-                padding: 0;
-            }
-
-            .container {
-                max-width: 100%;
-                padding: 0.5in;
-                margin: 0;
-                box-shadow: none;
-            }
-
-            .header {
-                border-bottom: 2px solid #000;
-                padding-bottom: 15px;
-                margin-bottom: 20px;
-            }
-
-            .header img {
-                width: 80px;
-                height: 80px;
-            }
-
-            h1 {
-                font-size: 20px;
-                margin-bottom: 5px;
-            }
-
-            h2 {
-                font-size: 14px;
-                border-bottom: 1px solid #000;
-                padding-bottom: 2px;
-                margin: 15px 0 10px 0;
-            }
-
-            .company-logo {
-                width: 20px !important;
-                height: 20px !important;
-                margin-right: 8px;
-            }
-
-            .job-header {
-                margin-bottom: 8px;
-            }
-
-            .job-title {
-                font-size: 12px;
-                font-weight: bold;
-            }
-
-            .job-meta {
-                font-size: 10px;
-                color: #666;
-            }
-
-            ul {
-                margin: 5px 0 15px 15px;
-                padding: 0;
-            }
-
-            li {
-                line-height: 1.3;
-                margin-bottom: 3px;
-            }
-
-            .skills-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-
-            .skill-category {
-                min-width: 200px;
-            }
-
-            .certifications-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-
-            .cert-item {
-                min-width: 250px;
-            }
-
-            .print-button, .footer {
-                display: none;
-            }
-        }
-
-        /* Screen Styles */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            line-height: 1.5;
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             background-color: #f8f9fa;
             color: #333;
         }
 
         .container {
             max-width: 850px;
-            margin: 20px auto;
+            margin: 0 auto;
             background: #fff;
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .header {
@@ -137,67 +41,64 @@
         }
 
         .header h1 {
-            margin: 0 0 5px 0;
-            font-size: 2.5em;
+            margin: 0 0 8px 0;
+            font-size: 2.2em;
             color: #0056b3;
             font-weight: 700;
         }
 
         .header .title {
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: 600;
             color: #333;
-            margin: 0 0 5px 0;
+            margin: 0 0 8px 0;
         }
 
         .header .location {
             font-size: 1em;
             color: #666;
-            margin: 0;
+            margin: 0 0 8px 0;
+        }
+
+        .header .contact-compact {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .header .contact-compact a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .header .contact-compact a:hover {
+            text-decoration: underline;
         }
 
         .header img {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             flex-shrink: 0;
         }
 
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .contact-item {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .contact-item strong {
-            color: #0056b3;
-        }
+        /* Remove contact-info styles - no longer needed */
 
         h2 {
             color: #0056b3;
-            font-size: 1.4em;
+            font-size: 1.3em;
             border-bottom: 2px solid #0056b3;
             padding-bottom: 5px;
-            margin: 30px 0 20px 0;
+            margin: 25px 0 20px 0;
             font-weight: 600;
         }
 
-        .summary {
-            font-size: 1.1em;
+        .summary p {
+            font-size: 1em;
             line-height: 1.7;
             color: #444;
-            margin-bottom: 30px;
-            text-align: justify;
+            margin-bottom: 25px;
         }
 
         .skills-grid {
@@ -209,14 +110,19 @@
 
         .skill-category h4 {
             color: #0056b3;
-            margin: 0 0 10px 0;
-            font-size: 1.1em;
+            margin: 0 0 12px 0;
+            font-size: 1.05em;
         }
 
         .skill-category ul {
             margin: 0;
-            padding-left: 20px;
+            padding-left: 18px;
             list-style-type: disc;
+        }
+
+        .skill-category li {
+            line-height: 1.5;
+            margin-bottom: 4px;
         }
 
         .job-section {
@@ -232,64 +138,44 @@
         .job-header {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             margin-bottom: 12px;
         }
 
         .company-logo {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             object-fit: contain;
-            border-radius: 5px;
+            border-radius: 4px;
         }
 
         .job-title {
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: 600;
             color: #333;
             margin: 0;
         }
 
         .job-meta {
-            font-size: 0.95em;
+            font-size: 0.9em;
             color: #666;
             font-style: italic;
-            margin: 2px 0 0 0;
+            margin: 3px 0 0 0;
         }
 
         .job-content ul {
-            margin: 10px 0;
-            padding-left: 20px;
+            margin: 12px 0;
+            padding-left: 18px;
         }
 
         .job-content li {
-            line-height: 1.6;
-            margin-bottom: 5px;
+            line-height: 1.5;
+            margin-bottom: 6px;
         }
 
         .highlight {
             color: #0056b3;
             font-weight: 600;
-        }
-
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .cert-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 5px;
-        }
-
-        .cert-icon {
-            color: #0056b3;
-            font-size: 1.2em;
         }
 
         .education-grid {
@@ -299,26 +185,33 @@
         }
 
         .education-item h4 {
-            margin: 0 0 5px 0;
+            margin: 0 0 6px 0;
             color: #333;
-            font-size: 1.1em;
+            font-size: 1.05em;
         }
 
         .education-item .degree {
             color: #0056b3;
             font-weight: 600;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .education-item .school {
             color: #666;
             font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .education-item .description {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.4;
         }
 
         .cta-section {
             text-align: center;
-            margin-top: 40px;
-            padding: 30px;
+            margin-top: 30px;
+            padding: 25px;
             background: #f8f9fa;
             border-radius: 8px;
         }
@@ -327,9 +220,9 @@
             background: #0056b3;
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border-radius: 5px;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.3s ease;
@@ -341,60 +234,10 @@
 
         .footer {
             text-align: center;
-            margin-top: 30px;
-            padding: 20px 0;
+            margin-top: 25px;
+            padding: 15px 0;
             color: #666;
-            font-size: 0.9em;
-        }
-
-        /* Mobile Styles */
-        @media screen and (max-width: 768px) {
-            body {
-                background-color: #f8f9fa;
-                padding: 10px;
-            }
-
-            .container {
-                margin: 10px auto;
-                padding: 20px;
-                border-radius: 5px;
-            }
-
-            .header {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            .header img {
-                width: 100px;
-                height: 100px;
-                order: -1;
-            }
-
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .skills-grid, .certifications-grid, .education-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .job-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .company-logo {
-                width: 35px;
-                height: 35px;
-            }
+            font-size: 0.85em;
         }
 
         a {
@@ -404,6 +247,86 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        /* Print Styles - Minimal differences */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                font-size: 11px;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 30px;
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .header img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .company-logo {
+                width: 25px;
+                height: 25px;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            .footer {
+                display: none;
+            }
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 25px;
+                border-radius: 5px;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .header img {
+                width: 80px;
+                height: 80px;
+                order: -1;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .contact-info {
+                display: none; /* Contact info now in header */
+            }
+
+            .skills-grid, .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
         }
     </style>
 </head>
@@ -415,28 +338,19 @@
                 <h1>Hidde van Heijst</h1>
                 <p class="title">Cloud Data & AI Architect</p>
                 <p class="location">Hilversum, Netherlands</p>
+                <div class="contact-compact">
+                    <script>
+                        var user = "info";
+                        var domain = "hiddevanheijst.nl";
+                        document.write('<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>');
+                    </script>
+                    • <a href="https://www.linkedin.com/in/hiddevanheijst" target="_blank">in/hiddevanheijst</a>
+                    • <a href="https://hiddevanheijst.nl" target="_blank">hiddevanheijst.nl</a>
+                </div>
             </div>
             <img src="profielfoto.png" alt="Hidde van Heijst">
         </div>
 
-        <div class="contact-info">
-            <div class="contact-item">
-                <strong>Email:</strong> 
-                <script>
-                    var user = "info";
-                    var domain = "hiddevanheijst.nl";
-                    document.write('<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>');
-                </script>
-            </div>
-            <div class="contact-item">
-                <strong>LinkedIn:</strong> 
-                <a href="https://www.linkedin.com/in/hiddevanheijst" target="_blank">in/hiddevanheijst</a>
-            </div>
-            <div class="contact-item">
-                <strong>Portfolio:</strong> 
-                <a href="https://hiddevanheijst.nl" target="_blank">hiddevanheijst.nl</a>
-            </div>
-        </div>
 
         <div class="summary">
             <h2>Professional Summary</h2>
