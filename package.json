@@ -1,0 +1,15 @@
+{
+  "name": "hidde-portfolio-chat",
+  "version": "1.0.0",
+  "description": "Chat API for Hidde van Heijst's portfolio",
+  "main": "api/chat.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

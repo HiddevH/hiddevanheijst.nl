@@ -1,0 +1,13 @@
+# Vercel deployment - ignore HTML files, only deploy API
+index.html
+resume.html
+index_modern.html
+*.png
+*.jpg
+*.jpeg
+images/
+profielfoto.png
+CNAME
+README.md
+CLAUDE.md
+DEPLOYMENT.md
