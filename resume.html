@@ -278,6 +278,11 @@
                 height: 25px;
             }
 
+            .skills-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 15px;
+            }
+
             .print-button {
                 display: none;
             }
@@ -620,18 +625,52 @@
 
         function toggleChat() {
             const chatModal = document.getElementById('chatModal');
+            const chatButton = document.querySelector('.chat-button');
+            
             chatModal.classList.toggle('active');
             
+            // Stop pulsing animation after first click
             if (chatModal.classList.contains('active')) {
+                chatButton.classList.add('clicked');
+                
                 // Initialize chat if first time opening
                 if (chatHistory.length === 0) {
                     addMessage('bot', 'Hi! I can help you learn about my background and experience in cloud data architecture. What would you like to know?');
+                    showSuggestedQuestions();
                 }
                 // Focus on input
                 setTimeout(() => {
                     document.getElementById('chatInput').focus();
                 }, 100);
             }
+        }
+
+        function showSuggestedQuestions() {
+            const suggestedContainer = document.getElementById('suggestedQuestions');
+            const questions = [
+                "What's your Azure experience?",
+                "Tell me about Nederlandse Loterij project",
+                "What services do you offer?",
+                "How can I contact you?"
+            ];
+            
+            suggestedContainer.innerHTML = '';
+            questions.forEach(question => {
+                const button = document.createElement('button');
+                button.className = 'suggested-question';
+                button.textContent = question;
+                button.onclick = () => sendSuggestedQuestion(question);
+                suggestedContainer.appendChild(button);
+            });
+        }
+
+        function sendSuggestedQuestion(question) {
+            // Hide suggested questions
+            document.getElementById('suggestedQuestions').innerHTML = '';
+            
+            // Send the question
+            document.getElementById('chatInput').value = question;
+            sendMessage();
         }
 
         function closeChat() {
@@ -954,6 +993,9 @@
         </div>
         
         <div class="chat-input-area">
+            <div id="suggestedQuestions" class="suggested-questions">
+                <!-- Suggested questions will be added dynamically -->
+            </div>
             <div class="chat-input-container">
                 <textarea 
                     id="chatInput" 
