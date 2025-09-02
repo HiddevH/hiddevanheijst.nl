@@ -320,10 +320,12 @@
             }
 
             .contact-info {
-                display: none; /* Contact info now in header */
+                display: none;
+                /* Contact info now in header */
             }
 
-            .skills-grid, .education-grid {
+            .skills-grid,
+            .education-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -360,9 +362,11 @@
             0% {
                 box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4), 0 0 0 0 rgba(0, 86, 179, 0.4);
             }
+
             50% {
                 box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4), 0 0 0 15px rgba(0, 86, 179, 0.1);
             }
+
             100% {
                 box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4), 0 0 0 0 rgba(0, 86, 179, 0);
             }
@@ -371,11 +375,13 @@
         .chat-button:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(0, 86, 179, 0.6);
-            animation: none; /* Stop pulsing on hover */
+            animation: none;
+            /* Stop pulsing on hover */
         }
 
         .chat-button.clicked {
-            animation: none; /* Stop pulsing after first click */
+            animation: none;
+            /* Stop pulsing after first click */
         }
 
         .chat-modal {
@@ -404,6 +410,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -584,12 +591,25 @@
             animation: typingBounce 1.4s infinite;
         }
 
-        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
 
         @keyframes typingBounce {
-            0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-10px); }
+
+            0%,
+            60%,
+            100% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-10px);
+            }
         }
 
         /* Mobile Chat Styles */
@@ -612,6 +632,7 @@
         }
 
         @media print {
+
             .chat-button,
             .chat-modal {
                 display: none !important;
@@ -626,13 +647,13 @@
         function toggleChat() {
             const chatModal = document.getElementById('chatModal');
             const chatButton = document.querySelector('.chat-button');
-            
+
             chatModal.classList.toggle('active');
-            
+
             // Stop pulsing animation after first click
             if (chatModal.classList.contains('active')) {
                 chatButton.classList.add('clicked');
-                
+
                 // Initialize chat if first time opening
                 if (chatHistory.length === 0) {
                     addMessage('bot', 'Hi! I can help you learn about my background and experience in cloud data architecture. What would you like to know?');
@@ -653,7 +674,7 @@
                 "What services do you offer?",
                 "How can I contact you?"
             ];
-            
+
             suggestedContainer.innerHTML = '';
             questions.forEach(question => {
                 const button = document.createElement('button');
@@ -667,7 +688,7 @@
         function sendSuggestedQuestion(question) {
             // Hide suggested questions
             document.getElementById('suggestedQuestions').innerHTML = '';
-            
+
             // Send the question
             document.getElementById('chatInput').value = question;
             sendMessage();
@@ -681,10 +702,10 @@
             const messagesContainer = document.getElementById('chatMessages');
             const messageDiv = document.createElement('div');
             messageDiv.className = `chat-message ${type}`;
-            
+
             const bubbleDiv = document.createElement('div');
             bubbleDiv.className = 'message-bubble';
-            
+
             // Simple markdown parsing for bold, lists, and line breaks
             let formattedContent = content
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
@@ -693,15 +714,15 @@
                 .replace(/\n/g, '<br>') // Single line breaks
                 .replace(/^(\d+)\.\s+\*\*(.*?)\*\*:\s*(.*?)$/gm, '<div style="margin: 8px 0;"><strong>$1. $2</strong>: $3</div>') // Numbered lists with bold titles
                 .replace(/^[-•]\s+(.*?)$/gm, '<div style="margin: 4px 0; padding-left: 16px;">• $1</div>'); // Bullet points
-            
+
             bubbleDiv.innerHTML = formattedContent;
-            
+
             messageDiv.appendChild(bubbleDiv);
             messagesContainer.appendChild(messageDiv);
-            
+
             // Scroll to bottom
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            
+
             // Store in history (only store user and assistant messages for API)
             if (type === 'user') {
                 chatHistory.push({ role: 'user', content });
@@ -739,18 +760,18 @@
             const input = document.getElementById('chatInput');
             const sendButton = document.getElementById('chatSend');
             const message = input.value.trim();
-            
+
             if (!message) return;
-            
+
             // Add user message
             addMessage('user', message);
             input.value = '';
-            
+
             // Disable input and show typing
             input.disabled = true;
             sendButton.disabled = true;
             showTypingIndicator();
-            
+
             try {
                 // Make actual API call
                 const response = await fetch(API_ENDPOINT, {
@@ -776,11 +797,11 @@
             } catch (error) {
                 console.error('Chat error:', error);
                 hideTypingIndicator();
-                
+
                 // Fallback to simulated response if API fails
                 addMessage('bot', 'I apologize, but I\'m experiencing some technical difficulties. Please try again later or contact Hidde directly at info@hiddevanheijst.nl for immediate assistance.');
             }
-            
+
             // Re-enable input
             input.disabled = false;
             sendButton.disabled = false;
@@ -788,10 +809,10 @@
         }
 
         // Handle Enter key in chat input
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const chatInput = document.getElementById('chatInput');
             if (chatInput) {
-                chatInput.addEventListener('keypress', function(e) {
+                chatInput.addEventListener('keypress', function (e) {
                     if (e.key === 'Enter' && !e.shiftKey) {
                         e.preventDefault();
                         sendMessage();
@@ -825,7 +846,11 @@
 
         <div class="summary">
             <h2>Professional Summary</h2>
-            <p>Senior Data & AI Architecture Leader with <strong>7+ years</strong> building enterprise-scale data platforms. Proven expertise in <strong>real-time processing, AI strategy, data governance, and regulatory compliance</strong> across gaming, retail, and fintech industries. Led teams to deliver sub-second fraud detection systems handling <strong>50K+ transactions/minute</strong> while ensuring 99.9% uptime and regulatory compliance.</p>
+            <p>Senior Data & AI Architecture Leader with <strong>7+ years</strong> building enterprise-scale data
+                platforms. Proven expertise in <strong>real-time processing, AI strategy, data governance, and
+                    regulatory compliance</strong> across gaming, retail, and fintech industries. Led teams to deliver
+                sub-second fraud detection systems handling <strong>50K+ transactions/minute</strong> while ensuring
+                99.9% uptime and regulatory compliance.</p>
         </div>
 
         <div class="skills-section">
@@ -877,10 +902,14 @@
                 </div>
                 <div class="job-content">
                     <ul>
-                        <li>Built <span class="highlight">scalable event-driven platform</span> using Azure Functions, Event Hubs, and CosmosDB for real-time gaming analytics</li>
-                        <li>Led implementation of <span class="highlight">personalization framework</span> enabling real-time content recommendations across all customer touchpoints</li>
-                        <li>Authored comprehensive <span class="highlight">AI & data strategy</span> including governance framework ensuring EU AI Act compliance</li>
-                        <li>Contributing as <span class="highlight">technical AI expert</span> in multidisciplinary thought leadership team (UX, CRO, Product) defining future customer AI interfaces</li>
+                        <li>Built <span class="highlight">scalable event-driven platform</span> using Azure Functions,
+                            Event Hubs, and CosmosDB for real-time gaming analytics</li>
+                        <li>Led implementation of <span class="highlight">personalization framework</span> enabling
+                            real-time content recommendations across all customer touchpoints</li>
+                        <li>Authored comprehensive <span class="highlight">AI & data strategy</span> including
+                            governance framework ensuring EU AI Act compliance</li>
+                        <li>Contributing as <span class="highlight">technical AI expert</span> in multidisciplinary
+                            thought leadership team (UX, CRO, Product) defining future customer AI interfaces</li>
                     </ul>
                 </div>
             </div>
@@ -895,11 +924,16 @@
                 </div>
                 <div class="job-content">
                     <ul>
-                        <li><span class="highlight">Led cross-functional data engineering team</span> establishing best practices for event sourcing, real-time processing, and model operationalization</li>
-                        <li>Delivered <span class="highlight">sub-second fraud detection</span> processing 50K+ transactions/minute with 99.9% uptime using ML models</li>
-                        <li>Built <span class="highlight">compliance architecture</span> meeting KOA and Wwft regulatory requirements with integrated governance</li>
-                        <li>Optimized system performance achieving <span class="highlight">95% load reduction</span> through efficient aggregation techniques</li>
-                        <li>Enabled <span class="highlight">self-service analytics</span> through reliable data pipelines and MLOps frameworks</li>
+                        <li><span class="highlight">Led cross-functional data engineering team</span> establishing best
+                            practices for event sourcing, real-time processing, and model operationalization</li>
+                        <li>Delivered <span class="highlight">sub-second fraud detection</span> processing 50K+
+                            transactions/minute with 99.9% uptime using ML models</li>
+                        <li>Built <span class="highlight">compliance architecture</span> meeting KOA and Wwft regulatory
+                            requirements with integrated governance</li>
+                        <li>Optimized system performance achieving <span class="highlight">95% load reduction</span>
+                            through efficient aggregation techniques</li>
+                        <li>Enabled <span class="highlight">self-service analytics</span> with robust data pipelines and
+                            automated ML operations</li>
                     </ul>
                 </div>
             </div>
@@ -914,9 +948,12 @@
                 </div>
                 <div class="job-content">
                     <ul>
-                        <li>Built <span class="highlight">cloud data platform on Azure</span> supporting BI and machine learning workflows</li>
-                        <li>Built <span class="highlight">Python-based ML recommendation engine</span> optimizing inventory across 200+ retail locations</li>
-                        <li>Achieved <span class="highlight">25% cost reduction</span> in inventory holding and 30% decrease in seasonal stockouts</li>
+                        <li>Built <span class="highlight">cloud data platform on Azure</span> supporting BI and machine
+                            learning workflows</li>
+                        <li>Built <span class="highlight">Python-based ML recommendation engine</span> optimizing
+                            inventory across 200+ retail locations</li>
+                        <li>Achieved <span class="highlight">25% cost reduction</span> in inventory holding and 30%
+                            decrease in seasonal stockouts</li>
                     </ul>
                 </div>
             </div>
@@ -931,9 +968,12 @@
                 </div>
                 <div class="job-content">
                     <ul>
-                        <li>Established <span class="highlight">Salesforce CDP Center of Expertise</span> as strategic technology partner</li>
-                        <li>Built <span class="highlight">data engineering pipelines</span> using Python and SQL for customer analytics and marketing automation</li>
-                        <li>Delivered <span class="highlight">customer data insights</span> for ABN AMRO improving digital banking experience</li>
+                        <li>Established <span class="highlight">Salesforce CDP Center of Expertise</span> as strategic
+                            technology partner</li>
+                        <li>Built <span class="highlight">data engineering pipelines</span> using Python and SQL for
+                            customer analytics and marketing automation</li>
+                        <li>Delivered <span class="highlight">customer data insights</span> for ABN AMRO improving
+                            digital banking experience</li>
                     </ul>
                 </div>
             </div>
@@ -948,7 +988,7 @@
                     <p class="school">Rotterdam School of Management, Erasmus University</p>
                     <p class="school">2015 - 2016 • Grade: 8.0/10</p>
                     <p style="margin-top: 8px; font-size: 0.9em; color: #666;">
-                        Focus: Information Strategy, Big Data Management & Architecture, Business Applications Design. 
+                        Focus: Information Strategy, Big Data Management & Architecture, Business Applications Design.
                         Technical skills: Database modeling, advanced analytics, Java, R.
                     </p>
                 </div>
@@ -958,7 +998,7 @@
                     <p class="school">University of Groningen</p>
                     <p class="school">2010 - 2015 • Grade: 7.0/10</p>
                     <p style="margin-top: 8px; font-size: 0.9em; color: #666;">
-                        Specialization: IT Architecture & Supply Chain Management. 
+                        Specialization: IT Architecture & Supply Chain Management.
                         Graduation thesis on organizational change management (Grade: 8.5/10).
                     </p>
                 </div>
@@ -987,22 +1027,18 @@
             <h3>💬 Ask About Hidde</h3>
             <button class="chat-close" onclick="closeChat()" title="Close chat">×</button>
         </div>
-        
+
         <div id="chatMessages" class="chat-messages">
             <!-- Messages will be added dynamically -->
         </div>
-        
+
         <div class="chat-input-area">
             <div id="suggestedQuestions" class="suggested-questions">
                 <!-- Suggested questions will be added dynamically -->
             </div>
             <div class="chat-input-container">
-                <textarea 
-                    id="chatInput" 
-                    class="chat-input" 
-                    placeholder="Ask me about Hidde's experience, projects, or expertise..."
-                    rows="1"
-                ></textarea>
+                <textarea id="chatInput" class="chat-input"
+                    placeholder="Ask me about Hidde's experience, projects, or expertise..." rows="1"></textarea>
                 <button id="chatSend" class="chat-send" onclick="sendMessage()" title="Send message">
                     ➤
                 </button>
