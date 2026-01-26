@@ -42,6 +42,21 @@
         /* Header */
         header {
             margin-bottom: 60px;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .profile-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .header-content {
+            flex: 1;
         }
 
         h1 {
@@ -362,8 +377,23 @@
                 padding: 40px 20px;
             }
 
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
+
             h1 {
                 font-size: 1.6rem;
+            }
+
+            .links {
+                justify-content: center;
             }
 
             .experience-item {
@@ -399,16 +429,19 @@
 <body>
     <div class="container">
         <header>
-            <h1>Hidde van Heijst</h1>
-            <p class="title">Data & AI Leader</p>
-            <p class="intro">
-                I build real-time data platforms at enterprise scale. Nearly 10 years of experience
-                with Azure, Python, and leading data teams.
-            </p>
-            <div class="links">
-                <a href="mailto:info@hiddevanheijst.nl">info@hiddevanheijst.nl</a>
-                <a href="https://linkedin.com/in/hiddevanheijst" target="_blank">LinkedIn</a>
-                <a href="https://github.com/HiddevH" target="_blank">GitHub</a>
+            <img src="profielfoto.png" alt="Hidde van Heijst" class="profile-photo">
+            <div class="header-content">
+                <h1>Hidde van Heijst</h1>
+                <p class="title">Data & AI Leader</p>
+                <p class="intro">
+                    I build real-time data platforms at enterprise scale. Nearly 10 years of experience
+                    with Azure, Python, and leading data teams.
+                </p>
+                <div class="links">
+                    <a href="mailto:info@hiddevanheijst.nl">info@hiddevanheijst.nl</a>
+                    <a href="https://linkedin.com/in/hiddevanheijst" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/HiddevH" target="_blank">GitHub</a>
+                </div>
             </div>
         </header>
 
