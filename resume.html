@@ -1,248 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidde van Heijst - Professional Resume</title>
-    <meta name="description" content="Resume of Hidde van Heijst - Data & AI Leader with nearly 10 years experience. Azure expert, real-time systems specialist. Based in Hilversum, Netherlands.">
-    <meta property="og:title" content="Hidde van Heijst - Professional Resume">
+    <title>Hidde van Heijst - Resume</title>
+    <meta name="description" content="Resume of Hidde van Heijst - Data & AI Leader with nearly 10 years experience. Azure expert, real-time systems specialist.">
+    <meta property="og:title" content="Hidde van Heijst - Resume">
     <meta property="og:description" content="Data & AI Leader with nearly 10 years experience building real-time data platforms at enterprise scale.">
     <meta property="og:image" content="https://hiddevanheijst.nl/profielfoto.png">
     <meta property="og:url" content="https://hiddevanheijst.nl/resume.html">
     <style>
-        body {
-            font-family: 'Open Sans', Arial, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
-            padding: 20px;
-            background-color: #f8f9fa;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #111;
+            background: #fff;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 850px;
+            max-width: 800px;
             margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-bottom: 25px;
-            border-bottom: 3px solid #0056b3;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .header-content {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .header h1 {
-            margin: 0 0 8px 0;
-            font-size: 2.2em;
-            color: #0056b3;
-            font-weight: 700;
-        }
-
-        .header .title {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: #333;
-            margin: 0 0 8px 0;
-        }
-
-        .header .location {
-            font-size: 1em;
-            color: #666;
-            margin: 0 0 8px 0;
-        }
-
-        .header .contact-compact {
-            font-size: 0.9em;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        .header .contact-compact a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-
-        .header .contact-compact a:hover {
-            text-decoration: underline;
-        }
-
-        .header img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        /* Remove contact-info styles - no longer needed */
-
-        h2 {
-            color: #0056b3;
-            font-size: 1.3em;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 5px;
-            margin: 25px 0 20px 0;
-            font-weight: 600;
-        }
-
-        .summary p {
-            font-size: 1em;
-            line-height: 1.7;
-            color: #444;
-            margin-bottom: 25px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .skill-category h4 {
-            color: #0056b3;
-            margin: 0 0 12px 0;
-            font-size: 1.05em;
-        }
-
-        .skill-category ul {
-            margin: 0;
-            padding-left: 18px;
-            list-style-type: disc;
-        }
-
-        .skill-category li {
-            line-height: 1.5;
-            margin-bottom: 4px;
-        }
-
-        .job-section {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .job-section:last-child {
-            border-bottom: none;
-        }
-
-        .job-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .company-logo {
-            width: 35px;
-            height: 35px;
-            object-fit: contain;
-            border-radius: 4px;
-        }
-
-        .job-title {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #333;
-            margin: 0;
-        }
-
-        .job-meta {
-            font-size: 0.9em;
-            color: #666;
-            font-style: italic;
-            margin: 3px 0 0 0;
-        }
-
-        .job-content ul {
-            margin: 12px 0;
-            padding-left: 18px;
-        }
-
-        .job-content li {
-            line-height: 1.5;
-            margin-bottom: 6px;
-        }
-
-        .highlight {
-            color: #0056b3;
-            font-weight: 600;
-        }
-
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .education-item h4 {
-            margin: 0 0 6px 0;
-            color: #333;
-            font-size: 1.05em;
-        }
-
-        .education-item .degree {
-            color: #0056b3;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .education-item .school {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 8px;
-        }
-
-        .education-item .description {
-            font-size: 0.9em;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        .cta-section {
-            text-align: center;
-            margin-top: 30px;
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .print-button {
-            background: #0056b3;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .print-button:hover {
-            background: #004494;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 25px;
-            padding: 15px 0;
-            color: #666;
-            font-size: 0.85em;
         }
 
         a {
@@ -254,802 +39,376 @@
             text-decoration: underline;
         }
 
-        /* Print Styles - Minimal differences */
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #111;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .title {
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .contact {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .contact a {
+            color: #666;
+        }
+
+        .back-link {
+            font-size: 0.9rem;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #111;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        /* Summary */
+        .summary p {
+            color: #333;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .skill-category li {
+            margin-bottom: 3px;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .job-title {
+            font-weight: 600;
+        }
+
+        .job-company {
+            color: #666;
+        }
+
+        .job-dates {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .job ul {
+            margin-top: 8px;
+            margin-left: 20px;
+            color: #444;
+        }
+
+        .job li {
+            margin-bottom: 4px;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .education-item h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .education-item .school {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .education-item .details {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .print-btn {
+            background: #0056b3;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .print-btn:hover {
+            background: #004494;
+        }
+
+        /* Print */
         @media print {
             body {
-                background: white;
                 padding: 0;
-                font-size: 11.5px;
+                font-size: 11px;
             }
 
             .container {
-                box-shadow: none;
-                padding: 20px;
-                margin: 0;
                 max-width: 100%;
             }
 
-            .header img {
-                width: 80px;
-                height: 80px;
+            header {
+                margin-bottom: 25px;
+                padding-bottom: 15px;
             }
 
-            .header h1 {
-                font-size: 1.8em;
+            section {
+                margin-bottom: 20px;
             }
 
-            .company-logo {
-                width: 25px;
-                height: 25px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 15px;
-            }
-
-            .print-button {
+            .back-link, .print-btn {
                 display: none;
             }
 
-            .footer {
-                display: none;
+            footer {
+                margin-top: 25px;
+            }
+
+            a {
+                color: #111;
             }
         }
 
-        /* Mobile Styles */
-        @media screen and (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            .container {
-                padding: 25px;
-                border-radius: 5px;
-            }
-
-            .header {
+        /* Mobile */
+        @media (max-width: 600px) {
+            header {
                 flex-direction: column;
-                text-align: center;
                 gap: 15px;
             }
 
-            .header img {
-                width: 80px;
-                height: 80px;
-                order: -1;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
 
-            .header h1 {
-                font-size: 1.8em;
-            }
-
-            .contact-info {
-                display: none;
-                /* Contact info now in header */
-            }
-
-            .skills-grid,
             .education-grid {
                 grid-template-columns: 1fr;
             }
 
             .job-header {
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-        }
-
-        /* Chat Button & Modal Styles */
-        .chat-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: #0056b3;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4);
-            cursor: pointer;
-            font-size: 24px;
-            z-index: 1001;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: chatPulse 2s infinite;
-        }
-
-        @keyframes chatPulse {
-            0% {
-                box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4), 0 0 0 0 rgba(0, 86, 179, 0.4);
-            }
-
-            50% {
-                box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4), 0 0 0 15px rgba(0, 86, 179, 0.1);
-            }
-
-            100% {
-                box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4), 0 0 0 0 rgba(0, 86, 179, 0);
-            }
-        }
-
-        .chat-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(0, 86, 179, 0.6);
-            animation: none;
-            /* Stop pulsing on hover */
-        }
-
-        .chat-button.clicked {
-            animation: none;
-            /* Stop pulsing after first click */
-        }
-
-        .chat-modal {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 400px;
-            height: 500px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            z-index: 1002;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            border: 1px solid #e1e5e9;
-        }
-
-        .chat-modal.active {
-            display: flex;
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .chat-header {
-            background: #0056b3;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-header h3 {
-            margin: 0;
-            font-size: 1.1em;
-        }
-
-        .chat-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            padding: 0;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .chat-messages {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-            background: #f8f9fa;
-        }
-
-        .chat-message {
-            margin-bottom: 15px;
-            max-width: 80%;
-        }
-
-        .chat-message.user {
-            margin-left: auto;
-        }
-
-        .chat-message.bot {
-            margin-right: auto;
-        }
-
-        .message-bubble {
-            padding: 12px 16px;
-            border-radius: 18px;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-
-        .chat-message.user .message-bubble {
-            background: #0056b3;
-            color: white;
-            border-bottom-right-radius: 6px;
-        }
-
-        .chat-message.bot .message-bubble {
-            background: white;
-            color: #333;
-            border: 1px solid #e1e5e9;
-            border-bottom-left-radius: 6px;
-        }
-
-        .chat-input-area {
-            padding: 20px;
-            background: white;
-            border-top: 1px solid #e1e5e9;
-        }
-
-        .suggested-questions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-            padding: 0 4px;
-        }
-
-        .suggested-question {
-            background: #f0f8ff;
-            color: #0056b3;
-            border: 1px solid #e1e5e9;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-        }
-
-        .suggested-question:hover {
-            background: #0056b3;
-            color: white;
-            transform: translateY(-1px);
-        }
-
-        .chat-input-container {
-            display: flex;
-            gap: 10px;
-            align-items: flex-end;
-        }
-
-        .chat-input {
-            flex: 1;
-            border: 1px solid #e1e5e9;
-            border-radius: 20px;
-            padding: 12px 16px;
-            font-size: 14px;
-            resize: none;
-            min-height: 20px;
-            max-height: 80px;
-            outline: none;
-            font-family: inherit;
-        }
-
-        .chat-input:focus {
-            border-color: #0056b3;
-        }
-
-        .chat-send {
-            background: #0056b3;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            transition: background 0.3s ease;
-        }
-
-        .chat-send:hover:not(:disabled) {
-            background: #004494;
-        }
-
-        .chat-send:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .typing-indicator {
-            display: none;
-            align-items: center;
-            gap: 8px;
-            color: #666;
-            font-size: 14px;
-            padding: 12px 16px;
-            background: white;
-            border: 1px solid #e1e5e9;
-            border-radius: 18px;
-            border-bottom-left-radius: 6px;
-            max-width: 80%;
-        }
-
-        .typing-dots {
-            display: flex;
-            gap: 3px;
-        }
-
-        .typing-dot {
-            width: 6px;
-            height: 6px;
-            background: #666;
-            border-radius: 50%;
-            animation: typingBounce 1.4s infinite;
-        }
-
-        .typing-dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .typing-dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes typingBounce {
-
-            0%,
-            60%,
-            100% {
-                transform: translateY(0);
-            }
-
-            30% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* Mobile Chat Styles */
-        @media (max-width: 768px) {
-            .chat-modal {
-                bottom: 100px;
-                right: 10px;
-                left: 10px;
-                width: auto;
-                height: 60vh;
-            }
-
-            .chat-button {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-        }
-
-        @media print {
-
-            .chat-button,
-            .chat-modal {
-                display: none !important;
+                gap: 2px;
             }
         }
     </style>
-    <script>
-        // Chat functionality
-        let chatHistory = [];
-        const API_ENDPOINT = 'https://hiddevanheijst-1pj3wnxb0-hiddes-projects-a2dd6a18.vercel.app/api/chat';
-
-        function toggleChat() {
-            const chatModal = document.getElementById('chatModal');
-            const chatButton = document.querySelector('.chat-button');
-
-            chatModal.classList.toggle('active');
-
-            // Stop pulsing animation after first click
-            if (chatModal.classList.contains('active')) {
-                chatButton.classList.add('clicked');
-
-                // Initialize chat if first time opening
-                if (chatHistory.length === 0) {
-                    addMessage('bot', 'Hi! I can help you learn about my background and experience in cloud data architecture. What would you like to know?');
-                    showSuggestedQuestions();
-                }
-                // Focus on input
-                setTimeout(() => {
-                    document.getElementById('chatInput').focus();
-                }, 100);
-            }
-        }
-
-        function showSuggestedQuestions() {
-            const suggestedContainer = document.getElementById('suggestedQuestions');
-            const questions = [
-                "What's your Azure experience?",
-                "Tell me about Nederlandse Loterij project",
-                "What services do you offer?",
-                "How can I contact you?"
-            ];
-
-            suggestedContainer.innerHTML = '';
-            questions.forEach(question => {
-                const button = document.createElement('button');
-                button.className = 'suggested-question';
-                button.textContent = question;
-                button.onclick = () => sendSuggestedQuestion(question);
-                suggestedContainer.appendChild(button);
-            });
-        }
-
-        function sendSuggestedQuestion(question) {
-            // Hide suggested questions
-            document.getElementById('suggestedQuestions').innerHTML = '';
-
-            // Send the question
-            document.getElementById('chatInput').value = question;
-            sendMessage();
-        }
-
-        function closeChat() {
-            document.getElementById('chatModal').classList.remove('active');
-        }
-
-        function addMessage(type, content) {
-            const messagesContainer = document.getElementById('chatMessages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `chat-message ${type}`;
-
-            const bubbleDiv = document.createElement('div');
-            bubbleDiv.className = 'message-bubble';
-
-            // Simple markdown parsing for bold, lists, and line breaks
-            let formattedContent = content
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
-                .replace(/\*(.*?)\*/g, '<em>$1</em>') // Italic
-                .replace(/\n\n/g, '<br><br>') // Double line breaks
-                .replace(/\n/g, '<br>') // Single line breaks
-                .replace(/^(\d+)\.\s+\*\*(.*?)\*\*:\s*(.*?)$/gm, '<div style="margin: 8px 0;"><strong>$1. $2</strong>: $3</div>') // Numbered lists with bold titles
-                .replace(/^[-•]\s+(.*?)$/gm, '<div style="margin: 4px 0; padding-left: 16px;">• $1</div>'); // Bullet points
-
-            bubbleDiv.innerHTML = formattedContent;
-
-            messageDiv.appendChild(bubbleDiv);
-            messagesContainer.appendChild(messageDiv);
-
-            // Scroll to bottom
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-            // Store in history (only store user and assistant messages for API)
-            if (type === 'user') {
-                chatHistory.push({ role: 'user', content });
-            } else if (type === 'bot') {
-                chatHistory.push({ role: 'assistant', content });
-            }
-        }
-
-        function showTypingIndicator() {
-            const messagesContainer = document.getElementById('chatMessages');
-            const typingDiv = document.createElement('div');
-            typingDiv.id = 'typingIndicator';
-            typingDiv.className = 'typing-indicator';
-            typingDiv.style.display = 'flex';
-            typingDiv.innerHTML = `
-                Hidde is typing
-                <div class="typing-dots">
-                    <div class="typing-dot"></div>
-                    <div class="typing-dot"></div>
-                    <div class="typing-dot"></div>
-                </div>
-            `;
-            messagesContainer.appendChild(typingDiv);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-
-        function hideTypingIndicator() {
-            const typingIndicator = document.getElementById('typingIndicator');
-            if (typingIndicator) {
-                typingIndicator.remove();
-            }
-        }
-
-        async function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const sendButton = document.getElementById('chatSend');
-            const message = input.value.trim();
-
-            if (!message) return;
-
-            // Add user message
-            addMessage('user', message);
-            input.value = '';
-
-            // Disable input and show typing
-            input.disabled = true;
-            sendButton.disabled = true;
-            showTypingIndicator();
-
-            try {
-                // Make actual API call
-                const response = await fetch(API_ENDPOINT, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        message: message,
-                        history: chatHistory.slice(-10) // Send last 10 messages for context
-                    })
-                });
-
-                hideTypingIndicator();
-
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}`);
-                }
-
-                const data = await response.json();
-                addMessage('bot', data.response);
-
-            } catch (error) {
-                console.error('Chat error:', error);
-                hideTypingIndicator();
-
-                // Fallback to simulated response if API fails
-                addMessage('bot', 'I apologize, but I\'m experiencing some technical difficulties. Please try again later or contact Hidde directly at info@hiddevanheijst.nl for immediate assistance.');
-            }
-
-            // Re-enable input
-            input.disabled = false;
-            sendButton.disabled = false;
-            input.focus();
-        }
-
-        // Handle Enter key in chat input
-        document.addEventListener('DOMContentLoaded', function () {
-            const chatInput = document.getElementById('chatInput');
-            if (chatInput) {
-                chatInput.addEventListener('keypress', function (e) {
-                    if (e.key === 'Enter' && !e.shiftKey) {
-                        e.preventDefault();
-                        sendMessage();
-                    }
-                });
-            }
-        });
-    </script>
 </head>
-
 <body>
     <div class="container">
-        <div class="header">
-            <div class="header-content">
+        <header>
+            <div>
                 <h1>Hidde van Heijst</h1>
                 <p class="title">Data & AI Leader</p>
-                <p class="location">Hilversum, Netherlands</p>
-                <div class="contact-compact">
-                    <script>
-                        var user = "info";
-                        var domain = "hiddevanheijst.nl";
-                        document.write('<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>');
-                    </script>
-                    • <a href="https://www.linkedin.com/in/hiddevanheijst" target="_blank">in/hiddevanheijst</a>
-                    • <a href="https://hiddevanheijst.nl" target="_blank">hiddevanheijst.nl</a>
-                </div>
+                <p class="contact">
+                    Hilversum, Netherlands<br>
+                    <a href="mailto:info@hiddevanheijst.nl">info@hiddevanheijst.nl</a> ·
+                    <a href="https://linkedin.com/in/hiddevanheijst">LinkedIn</a> ·
+                    <a href="https://hiddevanheijst.nl">hiddevanheijst.nl</a>
+                </p>
             </div>
-            <img src="profielfoto.png" alt="Hidde van Heijst">
-        </div>
+            <a href="index.html" class="back-link">← Back to profile</a>
+        </header>
 
+        <section class="summary">
+            <h2>Summary</h2>
+            <p>
+                Data & AI Leader with nearly 10 years building enterprise-scale data platforms.
+                8 years Azure expertise, 6 years real-time systems. Led teams delivering sub-second
+                fraud detection handling 50K+ transactions per minute with 99.9% uptime.
+                Experience across gaming, retail, and fintech industries.
+            </p>
+        </section>
 
-        <div class="summary">
-            <h2>Professional Summary</h2>
-            <p>Senior Data & AI Architecture Leader with <strong>7+ years</strong> building enterprise-scale data
-                platforms. Proven expertise in <strong>real-time processing, AI strategy, data governance, and
-                    regulatory compliance</strong> across gaming, retail, and fintech industries. Led teams to deliver
-                sub-second fraud detection systems handling <strong>50K+ transactions/minute</strong> while ensuring
-                99.9% uptime and regulatory compliance.</p>
-        </div>
-
-        <div class="skills-section">
-            <h2>Core Skills & Expertise</h2>
+        <section>
+            <h2>Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h4>Cloud & Data Platforms</h4>
+                    <h3>Cloud & Data</h3>
                     <ul>
                         <li>Microsoft Azure (Expert)</li>
                         <li>Azure Functions, Event Hubs</li>
                         <li>CosmosDB, Databricks</li>
-                        <li>Infrastructure as Code (Terraform)</li>
+                        <li>Terraform (IaC)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Engineering</h3>
+                    <ul>
+                        <li>Python, PySpark</li>
+                        <li>SQL, KQL</li>
                         <li>Event-driven architecture</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Architecture & Leadership</h4>
-                    <ul>
-                        <li>Data platform architecture</li>
-                        <li>Team leadership & mentoring</li>
-                        <li>AI governance & strategy</li>
-                        <li>Cross-functional collaboration</li>
-                        <li>Regulatory compliance (Wwft, KOA, EU AI Act)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>AI/ML & Data Engineering</h4>
-                    <ul>
-                        <li>Python (7+ years), PySpark</li>
                         <li>ML Operations</li>
-                        <li>Real-time data processing</li>
-                        <li>CI/CD (infrastructure, pipelines, applications)</li>
-                        <li>SQL, KQL (Azure Data Explorer)</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-
-        <div class="experience-section">
-            <h2>Professional Experience</h2>
-
-            <div class="job-section">
-                <div class="job-header">
-                    <img src="images/nederlandse_loterij_logo.png" alt="Nederlandse Loterij" class="company-logo">
-                    <div>
-                        <h3 class="job-title">Cloud Data & AI Architect</h3>
-                        <p class="job-meta">Nederlandse Loterij • September 2024 – Present</p>
-                    </div>
-                </div>
-                <div class="job-content">
+                <div class="skill-category">
+                    <h3>Leadership</h3>
                     <ul>
-                        <li>Built <span class="highlight">scalable event-driven platform</span> using Azure Functions,
-                            Event Hubs, and CosmosDB for real-time gaming analytics</li>
-                        <li>Led implementation of <span class="highlight">personalization framework</span> enabling
-                            real-time content recommendations across all customer touchpoints</li>
-                        <li>Authored comprehensive <span class="highlight">AI & data strategy</span> including
-                            governance framework ensuring EU AI Act compliance</li>
-                        <li>Contributing as <span class="highlight">technical AI expert</span> in multidisciplinary
-                            thought leadership team (UX, CRO, Product) defining future customer AI interfaces</li>
+                        <li>Team leadership</li>
+                        <li>Data strategy</li>
+                        <li>AI governance</li>
+                        <li>Compliance (KOA, Wwft, GDPR)</li>
                     </ul>
                 </div>
             </div>
+        </section>
 
-            <div class="job-section">
+        <section>
+            <h2>Experience</h2>
+
+            <div class="job">
                 <div class="job-header">
-                    <img src="images/nederlandse_loterij_logo.png" alt="Nederlandse Loterij" class="company-logo">
                     <div>
-                        <h3 class="job-title">Staff Data Engineer & AI Platform Architect</h3>
-                        <p class="job-meta">Nederlandse Loterij • September 2020 – September 2024</p>
+                        <span class="job-title">Data & AI Architect</span>
+                        <span class="job-company"> · Nederlandse Loterij</span>
                     </div>
+                    <span class="job-dates">2024 – Present</span>
                 </div>
-                <div class="job-content">
-                    <ul>
-                        <li><span class="highlight">Led cross-functional data engineering team</span> establishing best
-                            practices for event sourcing, real-time processing, and model operationalization</li>
-                        <li>Delivered <span class="highlight">sub-second fraud detection</span> processing 50K+
-                            transactions/minute with 99.9% uptime using ML models</li>
-                        <li>Built <span class="highlight">compliance architecture</span> meeting KOA and Wwft regulatory
-                            requirements with integrated governance</li>
-                        <li>Optimized system performance achieving <span class="highlight">95% load reduction</span>
-                            through efficient aggregation techniques</li>
-                        <li>Enabled <span class="highlight">self-service analytics</span> with robust data pipelines and
-                            automated ML operations</li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>Authored AI & data strategy including governance framework for EU AI Act compliance</li>
+                    <li>Led implementation of real-time personalization framework across all customer touchpoints</li>
+                    <li>Technical AI expert in multidisciplinary team defining future customer AI interfaces</li>
+                </ul>
             </div>
 
-            <div class="job-section">
+            <div class="job">
                 <div class="job-header">
-                    <img src="images/hallmark_logo.jpeg" alt="Hallmark Benelux" class="company-logo">
                     <div>
-                        <h3 class="job-title">Data Engineer</h3>
-                        <p class="job-meta">Hallmark Benelux • October 2018 – August 2020</p>
+                        <span class="job-title">Staff Data Engineer & Platform Architect</span>
+                        <span class="job-company"> · Nederlandse Loterij</span>
                     </div>
+                    <span class="job-dates">2020 – 2024</span>
                 </div>
-                <div class="job-content">
-                    <ul>
-                        <li>Built <span class="highlight">cloud data platform on Azure</span> supporting BI and machine
-                            learning workflows</li>
-                        <li>Built <span class="highlight">Python-based ML recommendation engine</span> optimizing
-                            inventory across 200+ retail locations</li>
-                        <li>Achieved <span class="highlight">25% cost reduction</span> in inventory holding and 30%
-                            decrease in seasonal stockouts</li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>Built event-driven platform using Azure Functions, Event Hubs, CosmosDB</li>
+                    <li>Delivered sub-second fraud detection processing 50K+ TPS with 99.9% uptime</li>
+                    <li>Led cross-functional data engineering team establishing best practices</li>
+                    <li>Achieved 95% system load reduction through optimized aggregation techniques</li>
+                    <li>Built compliance architecture meeting KOA and Wwft regulatory requirements</li>
+                </ul>
             </div>
 
-            <div class="job-section">
+            <div class="job">
                 <div class="job-header">
-                    <img src="images/capgemini_logo.png" alt="Capgemini" class="company-logo">
                     <div>
-                        <h3 class="job-title">Consultant & Data Engineer</h3>
-                        <p class="job-meta">Capgemini • April 2017 – October 2018</p>
+                        <span class="job-title">Data Engineer</span>
+                        <span class="job-company"> · Hallmark Benelux</span>
                     </div>
+                    <span class="job-dates">2018 – 2020</span>
                 </div>
-                <div class="job-content">
-                    <ul>
-                        <li>Established <span class="highlight">Salesforce CDP Center of Expertise</span> as strategic
-                            technology partner</li>
-                        <li>Built <span class="highlight">data engineering pipelines</span> using Python and SQL for
-                            customer analytics and marketing automation</li>
-                        <li>Delivered <span class="highlight">customer data insights</span> for ABN AMRO improving
-                            digital banking experience</li>
-                    </ul>
-                </div>
+                <ul>
+                    <li>Built cloud data platform on Azure supporting BI and ML workflows</li>
+                    <li>Developed Python ML recommendation engine optimizing inventory across 200+ locations</li>
+                    <li>Achieved 25% cost reduction in inventory and 30% decrease in stockouts</li>
+                </ul>
             </div>
-        </div>
 
-        <div class="education-section">
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Consultant & Data Engineer</span>
+                        <span class="job-company"> · Capgemini</span>
+                    </div>
+                    <span class="job-dates">2017 – 2018</span>
+                </div>
+                <ul>
+                    <li>Established Salesforce CDP Center of Expertise as strategic technology partner</li>
+                    <li>Built data engineering pipelines for customer analytics and marketing automation</li>
+                    <li>Delivered customer data insights for ABN AMRO digital banking</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
             <h2>Education</h2>
             <div class="education-grid">
                 <div class="education-item">
-                    <h4>Master of Science (MSc)</h4>
-                    <p class="degree">Business Information Management</p>
-                    <p class="school">Rotterdam School of Management, Erasmus University</p>
-                    <p class="school">2015 - 2016 • Grade: 8.0/10</p>
-                    <p style="margin-top: 8px; font-size: 0.9em; color: #666;">
-                        Focus: Information Strategy, Big Data Management & Architecture, Business Applications Design.
-                        Technical skills: Database modeling, advanced analytics, Java, R.
-                    </p>
+                    <h3>MSc Business Information Management</h3>
+                    <p class="school">Erasmus University Rotterdam · 2015–2016</p>
+                    <p class="details">Grade: 8.0/10 · Focus: Information Strategy, Big Data Architecture</p>
                 </div>
                 <div class="education-item">
-                    <h4>Bachelor of Science (BSc)</h4>
-                    <p class="degree">Technology Management</p>
-                    <p class="school">University of Groningen</p>
-                    <p class="school">2010 - 2015 • Grade: 7.0/10</p>
-                    <p style="margin-top: 8px; font-size: 0.9em; color: #666;">
-                        Specialization: IT Architecture & Supply Chain Management.
-                        Graduation thesis on organizational change management (Grade: 8.5/10).
-                    </p>
+                    <h3>BSc Technology Management</h3>
+                    <p class="school">University of Groningen · 2010–2015</p>
+                    <p class="details">Grade: 7.0/10 · Thesis: 8.5/10</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="cta-section">
-            <p><strong>Detailed case studies and technical implementations available at:</strong></p>
-            <p><a href="https://hiddevanheijst.nl" target="_blank">hiddevanheijst.nl</a></p>
-            <button class="print-button" onclick="window.print()">📄 Print/Save as PDF</button>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>© 2025 Hidde van Heijst • KvK: 97479888 • Available for consulting and full-time opportunities</p>
-    </div>
-
-    <!-- Chat Button -->
-    <button class="chat-button" onclick="toggleChat()" title="Chat with Hidde's AI Assistant">
-        💬
-    </button>
-
-    <!-- Chat Modal -->
-    <div id="chatModal" class="chat-modal">
-        <div class="chat-header">
-            <h3>💬 Ask About Hidde</h3>
-            <button class="chat-close" onclick="closeChat()" title="Close chat">×</button>
-        </div>
-
-        <div id="chatMessages" class="chat-messages">
-            <!-- Messages will be added dynamically -->
-        </div>
-
-        <div class="chat-input-area">
-            <div id="suggestedQuestions" class="suggested-questions">
-                <!-- Suggested questions will be added dynamically -->
-            </div>
-            <div class="chat-input-container">
-                <textarea id="chatInput" class="chat-input"
-                    placeholder="Ask me about Hidde's experience, projects, or expertise..." rows="1"></textarea>
-                <button id="chatSend" class="chat-send" onclick="sendMessage()" title="Send message">
-                    ➤
-                </button>
-            </div>
-        </div>
+        <footer>
+            <p>© 2026 Hidde van Heijst · KvK 97479888</p>
+            <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+        </footer>
     </div>
 </body>
-
 </html>

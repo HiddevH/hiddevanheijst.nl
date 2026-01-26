@@ -1,710 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hidde van Heijst - Data & AI Leader</title>
-    <meta name="description" content="Data & AI Leader with nearly 10 years experience building real-time data platforms at scale. Azure expert with 8+ years. Based in Hilversum, Netherlands.">
+    <meta name="description" content="Data & AI Leader with nearly 10 years experience building real-time data platforms at scale. Azure expert. Based in Hilversum, Netherlands.">
     <meta property="og:title" content="Hidde van Heijst - Data & AI Leader">
-    <meta property="og:description" content="Building real-time data platforms at enterprise scale. Nearly 10 years experience, 8 years Azure, 6 years real-time systems.">
+    <meta property="og:description" content="Building real-time data platforms at enterprise scale. Nearly 10 years experience, 8 years Azure.">
     <meta property="og:image" content="https://hiddevanheijst.nl/profielfoto.png">
     <meta property="og:url" content="https://hiddevanheijst.nl">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
     <style>
-        /* Navigation Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .nav-container {
-            max-width: 1200px;
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #111;
+            background: #fff;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 650px;
             margin: 0 auto;
+        }
+
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .title {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: #666;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Currently */
+        .currently p {
+            color: #333;
+        }
+
+        /* Experience */
+        .experience-item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
+            align-items: baseline;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #0056b3;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 30px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #333;
+        .experience-item .company {
             font-weight: 500;
-            transition: color 0.3s ease;
         }
 
-        .nav-menu a:hover {
-            color: #0056b3;
+        .experience-item .role {
+            color: #666;
+            font-size: 0.95rem;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        .experience-item .dates {
+            color: #999;
+            font-size: 0.9rem;
         }
 
-        /* Data visualization pattern using CSS */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                /* Grid lines */
-                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                /* Data nodes */
-                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 2px, transparent 3px),
-                radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.15) 2px, transparent 3px),
-                radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.15) 2px, transparent 3px),
-                radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.15) 2px, transparent 3px),
-                radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.15) 2px, transparent 3px),
-                radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0.15) 2px, transparent 3px);
-            background-size:
-                60px 60px,
-                60px 60px,
-                120px 120px,
-                120px 120px,
-                120px 120px,
-                120px 120px,
-                120px 120px,
-                120px 120px;
-            background-position:
-                0 0,
-                0 0,
-                0 0,
-                0 0,
-                0 0,
-                0 0,
-                0 0,
-                0 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Subtle overlay for better text readability */
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 86, 179, 0.2);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero .subtitle {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #fff;
-            color: #0056b3;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+        .resume-link {
             margin-top: 20px;
-            transition: transform 0.3s ease;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        /* Selected Work */
+        .work-item {
+            margin-bottom: 30px;
         }
 
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background: #f8f9fa;
+        .work-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 6px;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .work-item p {
+            color: #666;
+            margin-bottom: 8px;
         }
 
-        .service-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
+        .work-item .tech {
+            font-size: 0.85rem;
+            color: #999;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
+        /* Skills */
+        .skills {
+            color: #666;
         }
 
-        .service-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #0056b3;
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e5e5;
+            color: #999;
+            font-size: 0.85rem;
         }
 
-        /* Section Styles */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            color: #333;
-        }
-
-        .container-wide {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Case Study Styles */
-        .case-study-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-
-        .case-study-header {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: 25px;
-            align-items: start;
-        }
-
-        .case-study-logo {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .case-study-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-
-        /* Responsive adjustments */
-        body {
-            padding-top: 80px;
-            font-family: 'Open Sans', Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        /* Mobile Navigation */
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .nav-toggle span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 10px 0;
-            }
-
-            .nav-container {
-                padding: 0 15px;
-                position: relative;
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding: 50px 0;
-                transition: left 0.3s ease;
-                gap: 30px;
-                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-menu a {
-                font-size: 1.2em;
-                padding: 10px 20px;
-                border-radius: 5px;
-                transition: all 0.3s ease;
-            }
-
-            .nav-menu a:hover {
-                background: #0056b3;
-                color: white;
-            }
-
-            /* Hero section mobile */
-            .hero {
-                padding: 100px 0 60px;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2.5em;
-                margin-bottom: 15px;
-            }
-
-            .hero .subtitle {
-                font-size: 1.1em;
-                margin-bottom: 20px;
-            }
-
-            .hero-content {
-                padding: 20px 15px;
-            }
-
-            /* Services mobile */
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 0 15px;
-            }
-
-            .service-card {
-                padding: 30px 20px;
-            }
-
-            .service-icon {
-                font-size: 2.5em;
-            }
-
-            /* About section mobile */
-            #about .container-wide > div {
-                grid-template-columns: 1fr !important;
-                gap: 30px !important;
-                text-align: center;
-            }
-
-            #about img {
-                width: 200px !important;
-                height: 200px !important;
-                margin: 0 auto;
-            }
-
-            /* Case studies mobile */
-            .case-study-header {
-                grid-template-columns: 1fr !important;
-                text-align: center;
-                gap: 15px !important;
-            }
-
-            .case-study-logo {
-                width: 60px !important;
-                height: 60px !important;
-                margin: 0 auto 15px;
-                justify-self: center;
-            }
-
-            .case-study-content {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
-            }
-
-            #case-studies .container-wide > div {
-                padding: 20px 15px !important;
-            }
-
-            /* Resume section mobile */
-            .resume-skills-grid {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
-            }
-
-            .resume-experience-grid {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
-            }
-
-            .resume-education-grid {
-                grid-template-columns: 1fr !important;
-                gap: 30px !important;
-            }
-
-            #resume .container-wide > div[style*="grid-template-columns"] {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
-            }
-
-            /* Contact section mobile */
-            #contact .container-wide > div {
-                grid-template-columns: 1fr !important;
-                gap: 40px !important;
-            }
-
-            /* General mobile adjustments */
-            .container-wide {
-                padding: 0 15px;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .section-title {
-                font-size: 2em;
-                margin-bottom: 30px;
-            }
-
-            body {
-                padding-top: 70px;
-            }
-        }
-
-        /* Tablet styles */
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero h1 {
-                font-size: 3em;
-            }
-
-            .nav-menu {
-                gap: 20px;
-            }
-        }
-
-        @media print {
-            body {
-                font-size: 10px;
-                color: black;
-                background: white;
-                padding-top: 0;
-            }
-
-            .navbar,
-            .hero,
-            .services,
-            .cta-button,
-            #about,
-            #contact {
-                display: none;
-            }
-
-            .container {
-                max-width: 100%;
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 18px;
-                margin-bottom: 5px;
-            }
-
-            h2 {
-                font-size: 14px !important;
-                border-bottom: 1px solid #0056b3;
-                padding-bottom: 3px;
-                margin-top: 12px;
-            }
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 20px 0;
-            background-color: #f4f4f4;
-        }
-
-        .print-button {
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        /* Chat Button & Modal Styles */
+        /* Chat Widget */
         .chat-button {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
+            bottom: 24px;
+            right: 24px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             background: #0056b3;
             color: white;
             border: none;
-            border-radius: 50%;
-            box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4);
             cursor: pointer;
-            font-size: 24px;
-            z-index: 1001;
-            transition: all 0.3s ease;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: chatPulse 2s infinite;
-        }
-
-        @keyframes chatPulse {
-            0% {
-                box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4), 0 0 0 0 rgba(0, 86, 179, 0.4);
-            }
-            50% {
-                box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4), 0 0 0 15px rgba(0, 86, 179, 0.1);
-            }
-            100% {
-                box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4), 0 0 0 0 rgba(0, 86, 179, 0);
-            }
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .chat-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(0, 86, 179, 0.6);
-            animation: none; /* Stop pulsing on hover */
-        }
-
-        .chat-button.clicked {
-            animation: none; /* Stop pulsing after first click */
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .chat-modal {
             position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 400px;
+            bottom: 90px;
+            right: 24px;
+            width: 380px;
+            max-width: calc(100vw - 48px);
             height: 500px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            z-index: 1002;
+            max-height: calc(100vh - 120px);
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             display: none;
             flex-direction: column;
             overflow: hidden;
-            border: 1px solid #e1e5e9;
+            border: 1px solid #e5e5e5;
         }
 
         .chat-modal.active {
             display: flex;
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .chat-header {
-            background: #0056b3;
-            color: white;
-            padding: 20px;
+            padding: 16px 20px;
+            border-bottom: 1px solid #e5e5e5;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .chat-header h3 {
-            margin: 0;
-            font-size: 1.1em;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
         .chat-close {
             background: none;
             border: none;
-            color: white;
-            font-size: 20px;
+            font-size: 1.5rem;
             cursor: pointer;
-            padding: 0;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: #666;
+            line-height: 1;
+        }
+
+        .chat-close:hover {
+            color: #111;
         }
 
         .chat-messages {
             flex: 1;
-            padding: 20px;
             overflow-y: auto;
-            background: #f8f9fa;
+            padding: 20px;
         }
 
         .chat-message {
-            margin-bottom: 15px;
-            max-width: 80%;
+            margin-bottom: 16px;
         }
 
         .chat-message.user {
-            margin-left: auto;
-        }
-
-        .chat-message.bot {
-            margin-right: auto;
+            text-align: right;
         }
 
         .message-bubble {
-            padding: 12px 16px;
-            border-radius: 18px;
-            font-size: 14px;
-            line-height: 1.4;
+            display: inline-block;
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .chat-message.user .message-bubble {
             background: #0056b3;
             color: white;
-            border-bottom-right-radius: 6px;
+            border-bottom-right-radius: 4px;
         }
 
         .chat-message.bot .message-bubble {
-            background: white;
+            background: #f5f5f5;
             color: #333;
-            border: 1px solid #e1e5e9;
-            border-bottom-left-radius: 6px;
+            border-bottom-left-radius: 4px;
         }
 
         .chat-input-area {
-            padding: 20px;
-            background: white;
-            border-top: 1px solid #e1e5e9;
+            border-top: 1px solid #e5e5e5;
+            padding: 12px;
         }
 
         .suggested-questions {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 15px;
-            padding: 0 4px;
+            margin-bottom: 12px;
         }
 
         .suggested-question {
-            background: #f0f8ff;
-            color: #0056b3;
-            border: 1px solid #e1e5e9;
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 16px;
             padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 12px;
+            font-size: 0.8rem;
             cursor: pointer;
-            transition: all 0.2s ease;
-            white-space: nowrap;
+            transition: background 0.2s;
         }
 
         .suggested-question:hover {
-            background: #0056b3;
-            color: white;
-            transform: translateY(-1px);
+            background: #eee;
         }
 
         .chat-input-container {
             display: flex;
-            gap: 10px;
-            align-items: flex-end;
+            gap: 8px;
         }
 
         .chat-input {
             flex: 1;
-            border: 1px solid #e1e5e9;
+            border: 1px solid #e5e5e5;
             border-radius: 20px;
-            padding: 12px 16px;
-            font-size: 14px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
             resize: none;
-            min-height: 20px;
-            max-height: 80px;
-            outline: none;
             font-family: inherit;
         }
 
         .chat-input:focus {
+            outline: none;
             border-color: #0056b3;
         }
 
@@ -716,178 +314,226 @@
             width: 40px;
             height: 40px;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            transition: background 0.3s ease;
+            font-size: 1rem;
         }
 
-        .chat-send:hover:not(:disabled) {
+        .chat-send:hover {
             background: #004494;
         }
 
         .chat-send:disabled {
-            opacity: 0.6;
+            background: #ccc;
             cursor: not-allowed;
         }
 
         .typing-indicator {
-            display: none;
+            display: flex;
             align-items: center;
             gap: 8px;
             color: #666;
-            font-size: 14px;
-            padding: 12px 16px;
-            background: white;
-            border: 1px solid #e1e5e9;
-            border-radius: 18px;
-            border-bottom-left-radius: 6px;
-            max-width: 80%;
+            font-size: 0.85rem;
+            padding: 8px 0;
         }
 
         .typing-dots {
             display: flex;
-            gap: 3px;
+            gap: 4px;
         }
 
         .typing-dot {
             width: 6px;
             height: 6px;
-            background: #666;
+            background: #999;
             border-radius: 50%;
-            animation: typingBounce 1.4s infinite;
+            animation: typing 1.4s infinite;
         }
 
         .typing-dot:nth-child(2) { animation-delay: 0.2s; }
         .typing-dot:nth-child(3) { animation-delay: 0.4s; }
 
-        @keyframes typingBounce {
+        @keyframes typing {
             0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-10px); }
+            30% { transform: translateY(-4px); }
         }
 
-        /* Mobile Chat Styles */
-        @media (max-width: 768px) {
+        /* Mobile */
+        @media (max-width: 600px) {
+            body {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .experience-item {
+                flex-direction: column;
+                gap: 2px;
+            }
+
             .chat-modal {
-                bottom: 100px;
-                right: 10px;
-                left: 10px;
-                width: auto;
-                height: 60vh;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                max-width: 100%;
+                height: 100%;
+                max-height: 100%;
+                border-radius: 0;
             }
 
             .chat-button {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
+                bottom: 16px;
+                right: 16px;
+            }
+        }
+
+        /* Print */
+        @media print {
+            .chat-button, .chat-modal {
+                display: none !important;
             }
         }
     </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hidde van Heijst</h1>
+            <p class="title">Data & AI Leader</p>
+            <p class="intro">
+                I build real-time data platforms at enterprise scale. Nearly 10 years of experience
+                with Azure, Python, and leading data teams.
+            </p>
+            <div class="links">
+                <a href="mailto:info@hiddevanheijst.nl">info@hiddevanheijst.nl</a>
+                <a href="https://linkedin.com/in/hiddevanheijst" target="_blank">LinkedIn</a>
+                <a href="https://github.com/HiddevH" target="_blank">GitHub</a>
+            </div>
+        </header>
+
+        <section class="currently">
+            <h2>Currently</h2>
+            <p>
+                Data & AI Architect at <strong>Nederlandse Loterij</strong>, building event-driven
+                platforms processing tens of thousands of transactions per minute with sub-second
+                latency and 99.9% uptime.
+            </p>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <div>
+                    <span class="company">Nederlandse Loterij</span>
+                    <span class="role"> · Data & AI Architect</span>
+                </div>
+                <span class="dates">2020 – Present</span>
+            </div>
+            <div class="experience-item">
+                <div>
+                    <span class="company">Hallmark Benelux</span>
+                    <span class="role"> · Data Engineer</span>
+                </div>
+                <span class="dates">2018 – 2020</span>
+            </div>
+            <div class="experience-item">
+                <div>
+                    <span class="company">Capgemini</span>
+                    <span class="role"> · Consultant</span>
+                </div>
+                <span class="dates">2017 – 2018</span>
+            </div>
+            <p class="resume-link">
+                <a href="resume.html">View full resume →</a>
+            </p>
+        </section>
+
+        <section>
+            <h2>Selected Work</h2>
+            <div class="work-item">
+                <h3>Real-Time Gaming Platform</h3>
+                <p>Event-driven architecture handling 50K+ transactions per second with 99.9% uptime during peak events.</p>
+                <span class="tech">Azure Functions · Event Hubs · CosmosDB · Databricks</span>
+            </div>
+            <div class="work-item">
+                <h3>Inventory Optimization System</h3>
+                <p>ML-powered platform reducing inventory costs by 25% and stockouts by 30% across 200+ retail locations.</p>
+                <span class="tech">Python · Azure · Machine Learning · Power BI</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <p class="skills">
+                Azure · Python · Databricks · Real-time Systems · Event-driven Architecture ·
+                Terraform · Team Leadership · Data Strategy
+            </p>
+        </section>
+
+        <footer>
+            <p>© 2026 Hidde van Heijst · Hilversum, Netherlands · KvK 97479888</p>
+        </footer>
+    </div>
+
+    <!-- Chat Button -->
+    <button class="chat-button" onclick="toggleChat()" title="Chat with AI assistant">
+        💬
+    </button>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="chat-modal">
+        <div class="chat-header">
+            <h3>Ask about Hidde</h3>
+            <button class="chat-close" onclick="closeChat()">×</button>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <div class="chat-input-area">
+            <div id="suggestedQuestions" class="suggested-questions"></div>
+            <div class="chat-input-container">
+                <textarea
+                    id="chatInput"
+                    class="chat-input"
+                    placeholder="Ask about experience, projects, or skills..."
+                    rows="1"
+                ></textarea>
+                <button id="chatSend" class="chat-send" onclick="sendMessage()">➤</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Smooth scrolling for navigation links
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-
-                    if (targetElement) {
-                        const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
-
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-
-        // Mobile menu functions
-        function toggleMobileMenu() {
-            const navMenu = document.getElementById('navMenu');
-            const navToggle = document.querySelector('.nav-toggle');
-            
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        }
-
-        function closeMobileMenu() {
-            const navMenu = document.getElementById('navMenu');
-            const navToggle = document.querySelector('.nav-toggle');
-            
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const navMenu = document.getElementById('navMenu');
-            const navToggle = document.querySelector('.nav-toggle');
-            const navbar = document.querySelector('.navbar');
-            
-            if (!navbar.contains(event.target) && navMenu.classList.contains('active')) {
-                closeMobileMenu();
-            }
-        });
-
-        // Chat functionality
         let chatHistory = [];
         const API_ENDPOINT = 'https://hiddevanheijst-1pj3wnxb0-hiddes-projects-a2dd6a18.vercel.app/api/chat';
 
         function toggleChat() {
             const chatModal = document.getElementById('chatModal');
-            const chatButton = document.querySelector('.chat-button');
-            
             chatModal.classList.toggle('active');
-            
-            // Stop pulsing animation after first click
+
             if (chatModal.classList.contains('active')) {
-                chatButton.classList.add('clicked');
-                
-                // Initialize chat if first time opening
                 if (chatHistory.length === 0) {
-                    addMessage('bot', 'Hi! I can help you learn about my background and experience in cloud data architecture. What would you like to know?');
+                    addMessage('bot', 'Hi! I can help you learn about Hidde\'s background and experience. What would you like to know?');
                     showSuggestedQuestions();
                 }
-                // Focus on input
-                setTimeout(() => {
-                    document.getElementById('chatInput').focus();
-                }, 100);
+                setTimeout(() => document.getElementById('chatInput').focus(), 100);
             }
         }
 
         function showSuggestedQuestions() {
-            const suggestedContainer = document.getElementById('suggestedQuestions');
+            const container = document.getElementById('suggestedQuestions');
             const questions = [
                 "What's your Azure experience?",
-                "Tell me about Nederlandse Loterij project",
-                "What services do you offer?",
+                "Tell me about the gaming platform",
+                "What's your leadership experience?",
                 "How can I contact you?"
             ];
-            
-            suggestedContainer.innerHTML = '';
-            questions.forEach(question => {
-                const button = document.createElement('button');
-                button.className = 'suggested-question';
-                button.textContent = question;
-                button.onclick = () => sendSuggestedQuestion(question);
-                suggestedContainer.appendChild(button);
-            });
+            container.innerHTML = questions.map(q =>
+                `<button class="suggested-question" onclick="sendSuggestedQuestion('${q}')">${q}</button>`
+            ).join('');
         }
 
         function sendSuggestedQuestion(question) {
-            // Hide suggested questions
             document.getElementById('suggestedQuestions').innerHTML = '';
-            
-            // Send the question
             document.getElementById('chatInput').value = question;
             sendMessage();
         }
@@ -897,120 +543,80 @@
         }
 
         function addMessage(type, content) {
-            const messagesContainer = document.getElementById('chatMessages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `chat-message ${type}`;
-            
-            const bubbleDiv = document.createElement('div');
-            bubbleDiv.className = 'message-bubble';
-            
-            // Simple markdown parsing for bold, lists, and line breaks
-            let formattedContent = content
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
-                .replace(/\*(.*?)\*/g, '<em>$1</em>') // Italic
-                .replace(/\n\n/g, '<br><br>') // Double line breaks
-                .replace(/\n/g, '<br>') // Single line breaks
-                .replace(/^(\d+)\.\s+\*\*(.*?)\*\*:\s*(.*?)$/gm, '<div style="margin: 8px 0;"><strong>$1. $2</strong>: $3</div>') // Numbered lists with bold titles
-                .replace(/^[-•]\s+(.*?)$/gm, '<div style="margin: 4px 0; padding-left: 16px;">• $1</div>'); // Bullet points
-            
-            bubbleDiv.innerHTML = formattedContent;
-            
-            messageDiv.appendChild(bubbleDiv);
-            messagesContainer.appendChild(messageDiv);
-            
-            // Scroll to bottom
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            
-            // Store in history (only store user and assistant messages for API)
-            if (type === 'user') {
-                chatHistory.push({ role: 'user', content });
-            } else if (type === 'bot') {
-                chatHistory.push({ role: 'assistant', content });
-            }
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = `chat-message ${type}`;
+
+            let formatted = content
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/\n\n/g, '<br><br>')
+                .replace(/\n/g, '<br>');
+
+            div.innerHTML = `<div class="message-bubble">${formatted}</div>`;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+
+            if (type === 'user') chatHistory.push({ role: 'user', content });
+            else if (type === 'bot') chatHistory.push({ role: 'assistant', content });
         }
 
         function showTypingIndicator() {
-            const messagesContainer = document.getElementById('chatMessages');
-            const typingDiv = document.createElement('div');
-            typingDiv.id = 'typingIndicator';
-            typingDiv.className = 'typing-indicator';
-            typingDiv.style.display = 'flex';
-            typingDiv.innerHTML = `
-                Hidde is typing
-                <div class="typing-dots">
-                    <div class="typing-dot"></div>
-                    <div class="typing-dot"></div>
-                    <div class="typing-dot"></div>
-                </div>
-            `;
-            messagesContainer.appendChild(typingDiv);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.id = 'typingIndicator';
+            div.className = 'typing-indicator';
+            div.innerHTML = `Thinking<div class="typing-dots"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
         }
 
         function hideTypingIndicator() {
-            const typingIndicator = document.getElementById('typingIndicator');
-            if (typingIndicator) {
-                typingIndicator.remove();
-            }
+            const el = document.getElementById('typingIndicator');
+            if (el) el.remove();
         }
 
         async function sendMessage() {
             const input = document.getElementById('chatInput');
-            const sendButton = document.getElementById('chatSend');
+            const sendBtn = document.getElementById('chatSend');
             const message = input.value.trim();
-            
+
             if (!message) return;
-            
-            // Add user message
+
             addMessage('user', message);
             input.value = '';
-            
-            // Disable input and show typing
             input.disabled = true;
-            sendButton.disabled = true;
+            sendBtn.disabled = true;
             showTypingIndicator();
-            
+
             try {
-                // Make actual API call
                 const response = await fetch(API_ENDPOINT, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        message: message,
-                        history: chatHistory.slice(-10) // Send last 10 messages for context
-                    })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message, history: chatHistory.slice(-10) })
                 });
 
                 hideTypingIndicator();
 
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
                 const data = await response.json();
                 addMessage('bot', data.response);
-
             } catch (error) {
                 console.error('Chat error:', error);
                 hideTypingIndicator();
-                
-                // Fallback to simulated response if API fails
-                addMessage('bot', 'I apologize, but I\'m experiencing some technical difficulties. Please try again later or contact Hidde directly at info@hiddevanheijst.nl for immediate assistance.');
+                addMessage('bot', 'Sorry, I\'m having technical difficulties. Please email info@hiddevanheijst.nl directly.');
             }
-            
-            // Re-enable input
+
             input.disabled = false;
-            sendButton.disabled = false;
+            sendBtn.disabled = false;
             input.focus();
         }
 
-        // Handle Enter key in chat input
         document.addEventListener('DOMContentLoaded', function() {
-            const chatInput = document.getElementById('chatInput');
-            if (chatInput) {
-                chatInput.addEventListener('keypress', function(e) {
+            const input = document.getElementById('chatInput');
+            if (input) {
+                input.addEventListener('keypress', function(e) {
                     if (e.key === 'Enter' && !e.shiftKey) {
                         e.preventDefault();
                         sendMessage();
@@ -1019,660 +625,5 @@
             }
         });
     </script>
-</head>
-
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Hidde van Heijst</div>
-            <div class="nav-toggle" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
-                <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
-                <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
-                <li><a href="#case-studies" onclick="closeMobileMenu()">Case Studies</a></li>
-                <li><a href="#resume" onclick="closeMobileMenu()">Experience</a></li>
-                <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Data & AI Leader</h1>
-            <p class="subtitle">Building Real-Time Data Platforms at Enterprise Scale</p>
-            <p>Nearly 10 years building data platforms that drive business value. 8 years Azure, 6 years real-time systems. From gaming to retail to energy - I focus on pragmatic solutions that work.</p>
-            <a href="#contact" class="cta-button">Let's Discuss Your Data Challenges</a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container-wide">
-            <h2 class="section-title">Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">01</div>
-                    <h3>Cloud Data Platform Architecture</h3>
-                    <p>Design and implement scalable, event-driven data platforms on Azure. From real-time streaming to
-                        batch processing, I build systems that grow with your business.</p>
-                    <ul style="text-align: left; margin-top: 20px;">
-                        <li>Azure Functions & Event Hubs</li>
-                        <li>CosmosDB & Databricks</li>
-                        <li>Real-time analytics pipelines</li>
-                        <li>ML Operations</li>
-                        <li>Infrastructure as Code (Terraform)</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">02</div>
-                    <h3>Real-Time Data Engineering</h3>
-                    <p>Build lightning-fast data pipelines for fraud detection, personalization, and compliance.
-                        Sub-second processing times with enterprise reliability.</p>
-                    <ul style="text-align: left; margin-top: 20px;">
-                        <li>Event sourcing & streaming</li>
-                        <li>Python-based data pipelines</li>
-                        <li>PySpark distributed processing</li>
-                        <li>Performance optimization</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">03</div>
-                    <h3>Data Strategy & Leadership</h3>
-                    <p>Strategic guidance on AI, data governance, and team development. Bridge the gap between business
-                        objectives and technical implementation.</p>
-                    <ul style="text-align: left; margin-top: 20px;">
-                        <li>AI & data strategy development</li>
-                        <li>Team mentoring & leadership</li>
-                        <li>Agile product development (PSPO certified)</li>
-                        <li>Self-service analytics enablement</li>
-                        <li>Technology roadmapping</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">04</div>
-                    <h3>Data Platform Migration</h3>
-                    <p>Seamlessly migrate your data infrastructure to modern cloud platforms. Minimize downtime while
-                        maximizing performance and cost efficiency.</p>
-                    <ul style="text-align: left; margin-top: 20px;">
-                        <li>Legacy system modernization</li>
-                        <li>Cloud migration strategies</li>
-                        <li>Data pipeline optimization</li>
-                        <li>Cost optimization</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">05</div>
-                    <h3>Compliance & Governance</h3>
-                    <p>Ensure your data platform meets regulatory requirements. Expertise in financial services
-                        compliance, GDPR, and anti-money laundering systems.</p>
-                    <ul style="text-align: left; margin-top: 20px;">
-                        <li>Regulatory compliance (KOA, Wwft, EU AI Act)</li>
-                        <li>Data governance frameworks</li>
-                        <li>Audit-ready architectures</li>
-                        <li>Risk management systems</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">06</div>
-                    <h3>Consulting & Training</h3>
-                    <p>Empower your team with knowledge and best practices. From architecture reviews to hands-on
-                        training in modern data engineering.</p>
-                    <ul style="text-align: left; margin-top: 20px;">
-                        <li>Architecture assessments</li>
-                        <li>Team training & workshops</li>
-                        <li>Best practices implementation</li>
-                        <li>Technology evaluation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container-wide">
-            <h2 class="section-title">About Me</h2>
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: center;">
-                <div>
-                    <p style="font-size: 1.1em; line-height: 1.8;">
-                        I build data platforms that solve real business problems. Currently at Nederlandse Loterij, I architect systems processing tens of thousands of transactions per minute with sub-second latency and 99.9% uptime.
-                    </p>
-                    <p style="font-size: 1.1em; line-height: 1.8;">
-                        My approach: pragmatic solutions over perfect architectures. I believe in empowering teams, building consensus, and delivering sustainable systems that don't require heroes to maintain.
-                    </p>
-                    <p style="font-size: 1.1em; line-height: 1.8;">
-                        With nearly 10 years in data engineering and architecture, I've helped companies from gaming to retail to energy transform their data capabilities. Whether it's real-time ML for inventory optimization, event-driven architectures for scale, or compliance systems when needed - I focus on what drives business value.
-                    </p>
-                </div>
-                <div style="text-align: center;">
-                    <img src="profielfoto.png" alt="Hidde van Heijst"
-                        style="width: 250px; height: 250px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies Section -->
-    <section id="case-studies" class="section" style="background: #f8f9fa;">
-        <div class="container-wide">
-            <h2 class="section-title">Case Studies</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 60px; font-size: 1.1em; color: #666;">
-                Real-world examples of how I've helped organizations transform their data capabilities and drive
-                business value.
-            </p>
-
-            <div style="display: grid; gap: 40px;">
-
-                <!-- Case Study 1: Nederlandse Loterij Real-Time Platform -->
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <img src="images/nederlandse_loterij_logo.png" alt="Nederlandse Loterij" class="case-study-logo">
-                        <div>
-                            <h3 style="color: #0056b3; margin: 0 0 15px 0;">Real-Time Data Platform for Gaming
-                                Compliance & Personalization</h3>
-                            <p style="color: #666; margin-bottom: 20px; font-weight: 500;">Nederlandse Loterij • 2024
-                            </p>
-
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
-                                <h4 style="color: #333; margin: 0 0 15px 0;">Challenge</h4>
-                                <p style="margin: 0; line-height: 1.6;">Nederlandse Loterij needed a scalable,
-                                    event-driven architecture to process tens of thousands of transactions per minute
-                                    while maintaining sub-second processing times for fraud detection, responsible
-                                    gaming, and anti-money laundering compliance.</p>
-                            </div>
-
-                            <div class="case-study-content">
-                                <div>
-                                    <h4 style="color: #333; margin: 0 0 15px 0;">Solution</h4>
-                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                                        <li>Designed event-driven architecture with Azure Functions, Event Hubs and
-                                            CosmosDB</li>
-                                        <li>Implemented real-time analytics using Azure Data Explorer (KQL)</li>
-                                        <li>Trained ML models on Databricks for real-time deployment and personalization</li>
-                                        <li>Created efficient aggregation techniques to reduce system load</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 style="color: #333; margin: 0 0 15px 0;">Results</h4>
-                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                                        <li><strong>Sub-second processing</strong> for all sportsbook and casino
-                                            transactions</li>
-                                        <li><strong>99.9% uptime</strong> during peak gaming events</li>
-                                        <li><strong>95% reduction</strong> in system load through optimized aggregations
-                                        </li>
-                                        <li><strong>Full compliance</strong> with KOA and Wwft regulations</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Azure
-                                    Functions</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Event
-                                    Hubs</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">CosmosDB</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Azure
-                                    Data Explorer</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Databricks
-                                    ML</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Event-Driven
-                                    Architecture</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 2: Hallmark Inventory Optimization -->
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <img src="images/hallmark_logo.jpeg" alt="Hallmark Benelux" class="case-study-logo">
-                        <div>
-                            <h3 style="color: #0056b3; margin: 0 0 15px 0;">AI-Powered Inventory Optimization Platform
-                            </h3>
-                            <p style="color: #666; margin-bottom: 20px; font-weight: 500;">Hallmark Benelux • 2018-2020
-                            </p>
-
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
-                                <h4 style="color: #333; margin: 0 0 15px 0;">Challenge</h4>
-                                <p style="margin: 0; line-height: 1.6;">Hallmark Benelux struggled with seasonal
-                                    inventory management across multiple retail stores, leading to overstocking and
-                                    stockouts during peak seasons like Valentine's Day and Christmas.</p>
-                            </div>
-
-                            <div class="case-study-content">
-                                <div>
-                                    <h4 style="color: #333; margin: 0 0 15px 0;">Solution</h4>
-                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                                        <li>Built cloud-based data platform on Microsoft Azure</li>
-                                        <li>Developed Python-based ML recommendation engine</li>
-                                        <li>Implemented machine learning models for demand forecasting</li>
-                                        <li>Created self-service BI dashboards for store managers</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 style="color: #333; margin: 0 0 15px 0;">Results</h4>
-                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                                        <li><strong>25% reduction</strong> in inventory holding costs</li>
-                                        <li><strong>30% decrease</strong> in stockouts during peak seasons</li>
-                                        <li><strong>15% improvement</strong> in sales performance</li>
-                                        <li><strong>Real-time insights</strong> for 200+ retail locations</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Microsoft
-                                    Azure</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Python
-                                    ML</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Demand
-                                    Forecasting</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Power
-                                    BI</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Retail
-                                    Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 3: Capgemini CDP Center of Expertise -->
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <img src="images/capgemini_logo.png" alt="Capgemini" class="case-study-logo">
-                        <div>
-                            <h3 style="color: #0056b3; margin: 0 0 15px 0;">Salesforce CDP Center of Expertise &
-                                Customer Data Strategy</h3>
-                            <p style="color: #666; margin-bottom: 20px; font-weight: 500;">Capgemini • 2017-2018</p>
-
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
-                                <h4 style="color: #333; margin: 0 0 15px 0;">Challenge</h4>
-                                <p style="margin: 0; line-height: 1.6;">Capgemini needed to establish expertise in
-                                    emerging Customer Data Platform technologies to help enterprise clients unify
-                                    customer data for personalization and marketing automation across multiple
-                                    touchpoints.</p>
-                            </div>
-
-                            <div class="case-study-content">
-                                <div>
-                                    <h4 style="color: #333; margin: 0 0 15px 0;">Solution</h4>
-                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                                        <li>Built Center of Expertise for Salesforce Customer Data Platform</li>
-                                        <li>Developed data engineering pipelines using Python and SQL</li>
-                                        <li>Delivered comprehensive training programs on CDP best practices</li>
-                                        <li>Created customer analytics solutions for personalization</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 style="color: #333; margin: 0 0 15px 0;">Results</h4>
-                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                                        <li><strong>Strategic partnership</strong> with Salesforce on CDP technology
-                                        </li>
-                                        <li><strong>Center of Expertise</strong> established for customer data platforms
-                                        </li>
-                                        <li><strong>Multiple client implementations</strong> across retail and finance
-                                        </li>
-                                        <li><strong>Enhanced marketing ROI</strong> through unified customer data</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Salesforce
-                                    CDP</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Customer
-                                    Data Platform</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Python
-                                    & SQL</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Marketing
-                                    Analytics</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Consulting</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case Study 4: Stedin Smart Grid Optimization -->
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <img src="images/stedin_logo.jpg" alt="Stedin" class="case-study-logo">
-                        <div>
-                            <h3 style="color: #0056b3; margin: 0 0 15px 0;">Smart Grid EV Charging Optimization</h3>
-                            <p style="color: #666; margin-bottom: 20px; font-weight: 500;">Stedin • 2016</p>
-
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 25px;">
-                                <h4 style="color: #333; margin: 0 0 15px 0;">Challenge</h4>
-                                <p style="margin: 0; line-height: 1.6;">Stedin needed to optimize electric vehicle
-                                    charging infrastructure to reduce grid stress while maintaining efficient charging
-                                    services as EV adoption accelerated across the Netherlands.</p>
-                            </div>
-
-                            <div class="case-study-content">
-                                <div>
-                                    <h4 style="color: #333; margin: 0 0 15px 0;">Solution</h4>
-                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                                        <li>Researched demand-side management strategies</li>
-                                        <li>Designed valet charging algorithms for grid optimization</li>
-                                        <li>Developed predictive models for charging demand</li>
-                                        <li>Created sustainable EV infrastructure recommendations</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 style="color: #333; margin: 0 0 15px 0;">Results</h4>
-                                    <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                                        <li><strong>Grade 8.5/10</strong> for research excellence</li>
-                                        <li><strong>Media coverage</strong> for sustainable innovation</li>
-                                        <li><strong>Reduced grid stress</strong> during peak hours</li>
-                                        <li><strong>Scalable framework</strong> for nationwide deployment</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Smart
-                                    Grids</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">EV
-                                    Optimization</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Algorithm
-                                    Design</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Sustainability</span>
-                                <span
-                                    style="background: #e8f4fd; color: #0056b3; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Energy
-                                    Management</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 50px;">
-                <p style="font-size: 1.1em; color: #666; margin-bottom: 30px;">
-                    Ready to discuss how I can help transform your data capabilities?
-                </p>
-                <a href="#contact" class="cta-button"
-                    style="display: inline-block; background: #0056b3; color: white; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s;">
-                    Let's Talk About Your Project
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume" class="section" style="background: white;">
-        <div class="container-wide">
-            <h2 class="section-title">Experience & Background</h2>
-
-            <!-- Skills Overview -->
-            <div
-                style="background: white; padding: 40px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                <h3 style="color: #0056b3; margin-bottom: 30px; text-align: center;">Technical Expertise</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                    <div>
-                        <h4 style="color: #333; margin-bottom: 15px;">Cloud Platforms</h4>
-                        <p>Azure, Azure Functions, CosmosDB, Event Hubs</p>
-                    </div>
-                    <div>
-                        <h4 style="color: #333; margin-bottom: 15px;">Real-Time Architecture</h4>
-                        <p>Event sourcing, streaming ingestion, sub-second processing</p>
-                    </div>
-                    <div>
-                        <h4 style="color: #333; margin-bottom: 15px;">🐍 Python Development</h4>
-                        <p>7+ years experience in data pipelines, ML, API integration</p>
-                    </div>
-                    <div>
-                        <h4 style="color: #333; margin-bottom: 15px;">🏗️ Infrastructure</h4>
-                        <p>Terraform, CI/CD, PySpark, Databricks, SQL & KQL</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Professional Journey -->
-            <div
-                style="background: white; padding: 40px; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                <h3 style="color: #0056b3; margin-bottom: 40px; text-align: center;">Professional Journey</h3>
-
-                <!-- Nederlandse Loterij -->
-                <div style="border-left: 4px solid #0056b3; padding-left: 30px; margin-bottom: 40px;">
-                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
-                        <img src="images/nederlandse_loterij_logo.png" alt="Nederlandse Loterij"
-                            style="width: 60px; height: auto; object-fit: contain;">
-                        <div>
-                            <h4 style="margin: 0; color: #333; font-size: 1.3em;">Cloud Data Architect</h4>
-                            <p style="margin: 5px 0; color: #666; font-style: italic;">Nederlandse Loterij • September
-                                2024 – Present</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
-                        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
-                            <strong>Real-Time Platform</strong><br>
-                            <span style="color: #666;">Built scalable, event-driven architecture using Azure Functions,
-                                Event Hubs, and CosmosDB</span>
-                        </div>
-                        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
-                            <strong>AI Strategy</strong><br>
-                            <span style="color: #666;">Authored comprehensive strategy document on AI and data
-                                governance</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Lead Data Engineer role -->
-                <div style="border-left: 4px solid #28a745; padding-left: 30px; margin-bottom: 40px;">
-                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
-                        <img src="images/nederlandse_loterij_logo.png" alt="Nederlandse Loterij"
-                            style="width: 60px; height: auto; object-fit: contain;">
-                        <div>
-                            <h4 style="margin: 0; color: #333; font-size: 1.3em;">Lead Data Engineer & Platform
-                                Architect</h4>
-                            <p style="margin: 5px 0; color: #666; font-style: italic;">Nederlandse Loterij • September
-                                2020 – September 2024</p>
-                        </div>
-                    </div>
-                    <div
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
-                        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
-                            <strong>Team Leadership</strong><br>
-                            <span style="color: #666;">Built and led cross-functional data engineering team, established best
-                                practices</span>
-                        </div>
-                        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
-                            <strong>Compliance Systems</strong><br>
-                            <span style="color: #666;">Built KOA and Wwft compliant real-time fraud detection
-                                systems</span>
-                        </div>
-                        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
-                            <strong>Performance</strong><br>
-                            <span style="color: #666;">Achieved sub-second processing for thousands of transactions per
-                                minute</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Other positions and education -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                    <div style="border: 1px solid #ddd; padding: 25px; border-radius: 8px;">
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                            <img src="images/hallmark_logo.jpeg" alt="Hallmark" style="width: 50px; height: auto;">
-                            <div>
-                                <h5 style="margin: 0; color: #333;">Data Engineer</h5>
-                                <p style="margin: 0; color: #666; font-size: 0.9em;">Hallmark Benelux • 2018-2020</p>
-                            </div>
-                        </div>
-                        <p style="color: #666; font-size: 0.95em;">Built cloud data platform on Azure, developed
-                            Python-based recommendation engine for retail optimization</p>
-                    </div>
-
-                    <div style="border: 1px solid #ddd; padding: 25px; border-radius: 8px;">
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                            <img src="images/capgemini_logo.png" alt="Capgemini" style="width: 50px; height: auto;">
-                            <div>
-                                <h5 style="margin: 0; color: #333;">Consultant & Data Engineer</h5>
-                                <p style="margin: 0; color: #666; font-size: 0.9em;">Capgemini • 2017-2018</p>
-                            </div>
-                        </div>
-                        <p style="color: #666; font-size: 0.95em;">Salesforce CDP expertise, financial data analytics
-                            for ABN AMRO, Python & SQL pipeline development</p>
-                    </div>
-                </div>
-
-                <!-- Education Section -->
-                <h3 style="color: #0056b3; margin: 40px 0 30px 0; text-align: center;">Education</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                    <div style="border: 1px solid #ddd; padding: 25px; border-radius: 8px;">
-                        <h4 style="margin: 0 0 10px 0; color: #333; font-size: 1.1em;">MSc Business Information Management</h4>
-                        <p style="margin: 5px 0; color: #0056b3; font-weight: 600;">Rotterdam School of Management, Erasmus University</p>
-                        <p style="margin: 5px 0; color: #666; font-size: 0.9em;">2015 - 2016 • Grade: 8.0/10</p>
-                        <p style="margin: 10px 0 0 0; color: #555; font-size: 0.9em; line-height: 1.4;">
-                            Focus: Information Strategy, Big Data Management & Architecture, Business Applications Design. 
-                            Technical skills: Database modeling, advanced analytics, Java, R.
-                        </p>
-                    </div>
-                    
-                    <div style="border: 1px solid #ddd; padding: 25px; border-radius: 8px;">
-                        <h4 style="margin: 0 0 10px 0; color: #333; font-size: 1.1em;">BSc Technology Management</h4>
-                        <p style="margin: 5px 0; color: #0056b3; font-weight: 600;">University of Groningen</p>
-                        <p style="margin: 5px 0; color: #666; font-size: 0.9em;">2010 - 2015 • Grade: 7.0/10</p>
-                        <p style="margin: 10px 0 0 0; color: #555; font-size: 0.9em; line-height: 1.4;">
-                            Specialization: IT Architecture & Supply Chain Management. 
-                            Graduation thesis on organizational change management (Grade: 8.5/10).
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Download Resume CTA -->
-            <div style="text-align: center; margin-top: 40px;">
-                <button onclick="window.open('resume.html', '_blank')"
-                    style="background: #0056b3; color: white; border: none; padding: 15px 30px; border-radius: 5px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: background 0.3s ease;">
-                    📄 View Full Resume
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section" style="background: #0056b3; color: white;">
-        <div class="container-wide">
-            <h2 class="section-title" style="color: white;">Get In Touch</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
-                <div>
-                    <h3 style="color: white; margin-bottom: 30px;">Let's discuss your data challenges</h3>
-                    <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 30px;">
-                        Interested in discussing data architecture, real-time systems, or how to build high-performing data teams? I'm always happy to connect with fellow professionals and explore interesting challenges.
-                    </p>
-                    <div style="margin-bottom: 20px;">
-                        <h4 style="color: white; margin-bottom: 10px;">What I bring to the table:</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 10px;">→ Nearly 10 years in data engineering & architecture</li>
-                            <li style="margin-bottom: 10px;">→ 8 years building on Azure</li>
-                            <li style="margin-bottom: 10px;">→ 6 years in real-time systems</li>
-                            <li style="margin-bottom: 10px;">→ Experience leading cross-functional data teams</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="background: white; padding: 40px; border-radius: 10px; color: #333;">
-                    <h3 style="color: #0056b3; margin-bottom: 30px;">Get In Touch</h3>
-                    <div style="margin-bottom: 20px;">
-                        <strong>Email:</strong><br>
-                        <a href="mailto:info@hiddevanheijst.nl"
-                            style="color: #0056b3; font-size: 1.1em;">info@hiddevanheijst.nl</a>
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <strong>LinkedIn:</strong><br>
-                        <a href="https://www.linkedin.com/in/hiddevanheijst" target="_blank"
-                            style="color: #0056b3;">linkedin.com/in/hiddevanheijst</a>
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <strong>GitHub:</strong><br>
-                        <a href="https://github.com/HiddevH" target="_blank"
-                            style="color: #0056b3;">github.com/HiddevH</a>
-                    </div>
-                    <div style="margin-bottom: 30px;">
-                        <strong>Location:</strong><br>
-                        Hilversum, North Holland, Netherlands
-                    </div>
-                    <div style="padding: 20px; background: #f8f9fa; border-radius: 5px; text-align: center;">
-                        <strong style="color: #0056b3;">Response Time:</strong><br>
-                        <span style="color: #666;">Within 24 hours</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="footer">
-        <p>© 2026 Hidde van Heijst. All Rights Reserved. | KvK: 97479888</p>
-
-        <!-- Print Button -->
-        <button class="print-button" onclick="window.print()">Print Resume</button>
-    </div>
-
-    <!-- Chat Button -->
-    <button class="chat-button" onclick="toggleChat()" title="Chat with Hidde's AI Assistant">
-        💬
-    </button>
-
-    <!-- Chat Modal -->
-    <div id="chatModal" class="chat-modal">
-        <div class="chat-header">
-            <h3>💬 Ask About Hidde</h3>
-            <button class="chat-close" onclick="closeChat()" title="Close chat">×</button>
-        </div>
-        
-        <div id="chatMessages" class="chat-messages">
-            <!-- Messages will be added dynamically -->
-        </div>
-        
-        <div class="chat-input-area">
-            <div id="suggestedQuestions" class="suggested-questions">
-                <!-- Suggested questions will be added dynamically -->
-            </div>
-            <div class="chat-input-container">
-                <textarea 
-                    id="chatInput" 
-                    class="chat-input" 
-                    placeholder="Ask me about Hidde's experience, projects, or expertise..."
-                    rows="1"
-                ></textarea>
-                <button id="chatSend" class="chat-send" onclick="sendMessage()" title="Send message">
-                    ➤
-                </button>
-            </div>
-        </div>
-    </div>
 </body>
-
 </html>
