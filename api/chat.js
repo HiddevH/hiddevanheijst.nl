@@ -1,27 +1,42 @@
 export default async function handler(req, res) {
-  // Handle CORS - allow multiple origins including local testing
+  // Strict CORS configuration - only allow production domains
   const allowedOrigins = [
     'https://hiddevanheijst.nl',
-    'https://www.hiddevanheijst.nl',
-    'https://hiddevanheijst-cpag7qmrt-hiddes-projects-a2dd6a18.vercel.app',
-    'http://localhost:3000',
-    'http://localhost:8080',
-    'http://127.0.0.1:5500', // Live Server
-    'http://127.0.0.1:8080',
-    'http://localhost:5000'
+    'https://www.hiddevanheijst.nl'
   ];
-  
-  const origin = req.headers.origin;
-  
-  // For local file:// protocol testing, allow all origins
-  if (!origin || origin === 'null') {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-  } else if (allowedOrigins.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  } else {
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow all for now during testing
+
+  // Only allow localhost in development
+  const isDevelopment = process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'development';
+  if (isDevelopment) {
+    allowedOrigins.push(
+      'http://localhost:3000',
+      'http://localhost:8080',
+      'http://127.0.0.1:5500',
+      'http://127.0.0.1:8080',
+      'http://localhost:5000'
+    );
   }
-  
+
+  const origin = req.headers.origin;
+
+  // SECURITY: Reject requests without valid origin (prevents direct API calls)
+  if (!origin || origin === 'null') {
+    return res.status(403).json({
+      error: 'Access denied. Invalid origin.',
+      status: 'error'
+    });
+  }
+
+  // SECURITY: Only allow whitelisted origins
+  if (!allowedOrigins.includes(origin)) {
+    console.warn(`Blocked request from unauthorized origin: ${origin}`);
+    return res.status(403).json({
+      error: 'Access denied. Unauthorized origin.',
+      status: 'error'
+    });
+  }
+
+  res.setHeader('Access-Control-Allow-Origin', origin);
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('Access-Control-Max-Age', '86400'); // Cache preflight for 24 hours
@@ -37,15 +52,32 @@ export default async function handler(req, res) {
   try {
     const { message, history = [] } = req.body;
 
+    // SECURITY: Validate message
     if (!message) {
       return res.status(400).json({ error: 'Message is required' });
     }
 
+    // SECURITY: Prevent abuse with message length limits
+    if (typeof message !== 'string' || message.length > 1000) {
+      return res.status(400).json({
+        error: 'Message must be a string with maximum 1000 characters',
+        status: 'error'
+      });
+    }
+
+    // SECURITY: Limit history to prevent token abuse
+    if (!Array.isArray(history) || history.length > 20) {
+      return res.status(400).json({
+        error: 'Invalid conversation history',
+        status: 'error'
+      });
+    }
+
     if (!process.env.OPENAI_API_KEY) {
       console.error('OPENAI_API_KEY environment variable not set');
-      return res.status(500).json({ 
+      return res.status(500).json({
         error: 'API configuration error. Please contact the site administrator.',
-        status: 'error' 
+        status: 'error'
       });
     }
 

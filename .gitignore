@@ -77,8 +77,14 @@ temp/
 # Security and sensitive files
 *.pem
 *.key
+*.p12
+*.pfx
 config.json
 secrets.json
+credentials.json
+auth.json
+.env.*
+!.env.example
 
 # Python
 .venv/
